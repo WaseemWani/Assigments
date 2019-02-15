@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Question10</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+</head>
+<body>
+     <h5> Question10: Create a dropdown menu using hover method in jquery</h5>
+     <h4 style="color:red"> Welcome to the Menu Page </h4>
+     <div class='menu'>
+      <p  class='hover-link'>Menu Hover</p>
+         <div class='sub'>
+            <ul>
+                  <li>About</li>
+                   <li>Dashboard</li>
+                   <li>Training</li>
+                   <li>Courses</li>
+            </ul>
+         </div>
+     </div>
+<script>
+// script for hovering the droopdown 
+
+$(document).ready(function() {
+   $( ".hover-link" ).css({"background":"blue","padding":"10px","border-radius":"10px","width":"70px"});
+    $( ".sub" ).css({"background":"cyan","padding":"10px","border-radius":"10px","width":"130px"});
+      $(function() {
+       $(".menu").hover(
+             function() { $(".sub").slideToggle(400); },
+             function() { $(".sub").hide(); }
+       );
+  } );
+ } );
+</script>
+</body>
+</html>
