@@ -12,8 +12,8 @@ class ViewController2: UIViewController {
     @IBOutlet var button: UIButton!
     
     @IBAction func jump() {
-        let abc = UIStoryboard(name: "Main", bundle: nil)
-        let xyz = abc.instantiateViewController(withIdentifier: "ViewController3")
+        let viewController = UIStoryboard(name: "Main", bundle: nil)
+        let xyz = viewController.instantiateViewController(withIdentifier: "ViewController3")
         self.navigationController?.pushViewController(xyz, animated: true)
     }
     override func viewDidLoad() {
@@ -22,6 +22,7 @@ class ViewController2: UIViewController {
         self.title = "Waseem"
         print(label)
         
+        //  Question4 Customization of navigation item
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "back to view 1", style: .plain, target: self, action: #selector(self.backButton))
         // Do any additional setup after loading the view.
     }

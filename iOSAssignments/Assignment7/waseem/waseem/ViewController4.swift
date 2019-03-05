@@ -32,7 +32,8 @@ class ViewController4: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "4th view"
-        //
+        //label.text = "Hello there!, this is view 4"
+        //  Question4 Customization of navigation item
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "back to view 3", style: .plain, target: self, action: #selector(self.backButton))
         // Do any additional setup after loading the view.
     }
