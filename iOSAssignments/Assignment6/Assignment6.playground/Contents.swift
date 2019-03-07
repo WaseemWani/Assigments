@@ -1,6 +1,6 @@
 import UIKit
 
-var str1 = "Hello, playground"
+//var str1 = "Hello, playground"
 //:## Exercise 6
 //:  Question 1:
 //:  What is Error Protocol. Create a custom error conforming to error protocol.
@@ -78,12 +78,12 @@ class Person {
         }
 }
 }
-//do {
-//    let person1 = try Person("Nitin", -1)
-//}
-//catch Initialisation.initialisationFailed {
-//     print("not able to initailise the object")
-//}
+do {
+    let person1 = try Person("Nitin", -1)
+}
+catch Initialisation.initialisationFailed {
+     print("not able to initailise the object")
+}
 
 
 //: Question 3. Explain the difference try, try?, try! , make sure to write a program to explain the difference.
@@ -123,117 +123,160 @@ print("Question 2. Error handling, difference between try, try? and try!")
 print("--------------------------------------------------------------------")
 
    
-//  do {
-//            let student1 = try Student("waseem",-22, email: "abc")
-//        }
-//        catch PotentialErrors.invalidEmailId {
-//            print("invalid email ID")
-//        }
-//     catch PotentialErrors.invalidAge {
-//    print("age can not be less tha n or equal to zero")
-//}
-// //print(Date())
-////print(date)
-let student2 = try? Student( "akhil mittal", -2, email: "abc")
+  do {
+            let student1 = try Student("waseem",-22, email: "abc")
+        }
+        catch PotentialErrors.invalidEmailId {
+            print("invalid email ID")
+        }
+     catch PotentialErrors.invalidAge {
+    print("age can not be less than or equal to zero")
+}
 
+ let student2 = try? Student( "akhil mittal", -2, email: "abc")
+
+//:  try! is used without an do - catch block. It returns a normal type. If the code throws an error, it will crash. Because the returned type will be nil and a normal type cannot handle nil.
  let student33 = try! Student( "wani", 3, email: "abcc@example.com" )
 
 
 //: Question3. Write a program which loads the data from a datasource of 10 employees looks like below, Program would help to give salary bonus to employees. Which is based on some conditions but if employee is not able to satisfy the condition program should throw the error with specific error condition and its description should be printed.
 enum BonusError: Error {
-    case absentOnDay
-    case notEightyPercent
-    case notCompletedYear
-    case noHotcompetency
+    case absentOnDay(str: String)
+    case notEightyPercent(str: String)
+    case notCompletedYear(str: String)
+    case noHotcompetency(str: String)
 }
 
-
-
-
-class BonusProgram  {
-    
-    
-    struct Employee {
+struct Employee {
         
-        var empID: String
+        var empID: Int
         var empName: String
         var empEmail: String
-        var joiningDate: Date
+        var joiningDate: Int
         var competency: String
         var attendancePercent: Float
         var isPresent:Bool
+}
         
-        init(empID: String, empName: String, empEmail:String, joiningDate: Date, competency: String, attendancePercent: Float, isPresent: Bool) {
-            self.empID = empID
-            self.empName = empName
-            self.empEmail = empEmail
-            self.competency = competency
-            self.joiningDate = joiningDate
-            self.attendancePercent = attendancePercent
-            self.isPresent = isPresent
+class BonusProgram {
+    
+            let  employees: [Employee] = [ Employee(empID: 320, empName: "Muskan", empEmail: "muskaan@tothenew.com", joiningDate: 2019, competency: "iOS", attendancePercent: 90, isPresent: true),
+            Employee(empID: 321, empName: "Mithlesh", empEmail: "mithlesh@tothenew.com", joiningDate: 2017, competency: "java", attendancePercent: 80, isPresent: true),
+            Employee(empID: 323, empName: "Ankit", empEmail: "ankit@tothenew.com", joiningDate: 2017, competency: "Android", attendancePercent: 80, isPresent: true),
+            Employee(empID: 324, empName: "Sachin", empEmail: "sachin@tothenew.com", joiningDate: 2019, competency: "iOS", attendancePercent: 81, isPresent: true) ,
+            Employee(empID: 325, empName: "Muskan", empEmail: "muskaan@tothenew.com", joiningDate: 2018 , competency: "iOS", attendancePercent: 89, isPresent: false) ,
+            Employee(empID: 326, empName: "Merry", empEmail: "merry@tothenew.com", joiningDate: 2015 , competency: "iOS", attendancePercent: 95, isPresent: true) ]
+        
+    func allowedForBonus( email: String) throws{
+        var eligibility: Bool = true, currentYear = 2019
+        
+        for emp in employees
+        {
+            if (emp.empEmail == email)
+            {
+
+               if (emp.isPresent != true)  {
+                     eligibility = false
+                  print(emp.empName)
+                throw BonusError.absentOnDay(str: emp.empName)
+                
+                 }
+               else {
+                  eligibility = true
+                 }
+        
+               if (emp.attendancePercent < 80) {
+                     eligibility = false
+                throw BonusError.notEightyPercent(str: emp.empName)
+                 }
+               else {
+                 eligibility = false
+                }
+        
+               if(currentYear - emp.joiningDate <= 0 ) {
+                   eligibility = false
+                throw BonusError.notCompletedYear(str: emp.empName)
+                
+                }
+               else {
+               eligibility = true
+               }
+        
+        
+              if(emp.competency == "iOS" || emp.competency == "Bigdata" || emp.competency == "Android" || emp.competency == "AI") {
+                    eligibility = true
+                
+                }
+              else {
+                 eligibility = false
+                 throw BonusError.noHotcompetency(str: emp.empName)
+                }
             
+        
+              if(eligibility == true) {
+              print(emp.empName,"eligible for bonus")
+                }
+              }
         }
     }
-    
-    
-    func allowedForBonus( _ email: String) throws -> Bool {
-//        var currentDate = DateFormatter()
-//        currentDate.dateFormat = "dd/MM/yyyy"
-//        currentDate = DateFormatter.date(DateFormatter())
-//
-        
-//        for emp in employees
-//        {
-            if (self.empEmail == email)
-            {
-              if (self.isPresent != true)  {
-                throw BonusError.absentOnDay
-              }
-              else if (self.attendancePercent < 80) {
-                 throw BonusError.notEightyPercent
-             }
-        
-//        else if(self.joiningDate - Date() < 1) {
-//            throw BonusError.notCompletedYear
-//        }
-//
-            else {
-              return true
-            }      //if (self.joiningDate)
-          }
-         else {
-           print(" employee not found by this mail")
-            }
-      }
-  }
-
-
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
-
-let emp1 = BonusProgram.Employee(empID: "1", empName: "waseem", empEmail: "waseem.ahmed@tothenew.com", joiningDate: dateFormatter.date(from: "01/02/2012")!, competency: "iOS", attendancePercent: 90, isPresent: true)
-let emp2 = BonusProgram.Employee(empID: "2", empName: "utkarsh", empEmail: "utkarsh@tothenew.com", joiningDate: dateFormatter.date(from: "01/02/2019")!, competency: "iOS", attendancePercent: 70, isPresent: true)
-let emp3 = BonusProgram.Employee(empID: "3", empName: "abhishek", empEmail: "abhishek@tothenew.com", joiningDate: dateFormatter.date(from: "01/02/2018")!, competency: "iOS", attendancePercent: 70, isPresent: true)
-
-let employees = [emp1, emp2, emp3]
+ }
 
 print("\n--------------------------------------------------------------------")
-print("Question 3. Error handling.Bonus Program")
+print("Question 3. Error handling. Bonus Program")
 print("--------------------------------------------------------------------")
 
 let bonusProg = BonusProgram()
-print(bonusProg)
+
 do {
-    try bonusProg.allowedForBonus("waseem.ahmed@tothenew.com")
-}
-   
-    catch BonusError.absentOnDay {
-        print("\(bonusProg.empName)not presen today")
-}
-    catch BonusError.notEightyPercent {
-        print("\(bonusProg.empName) has not 80% attendence")
+    try bonusProg.allowedForBonus(email: "muskaan@tothenew.com")
+  }
+ catch BonusError.absentOnDay(let name) {
+      print("\(name)is absent today")
 }
 
-catch BonusError.notCompletedYear {
-    print("\(bonusProg.empName) has not completed a year yet")
+catch BonusError.notCompletedYear(let name) {
+    print("\(name) has not completed a year yet")
+}
+
+catch BonusError.notEightyPercent(let name) {
+    print("\(name) has not 80% attendence")
+}
+catch BonusError.noHotcompetency(let name) {
+    print("\(name) is not in a comptency falling under bonus program")
+}
+
+do {
+    try bonusProg.allowedForBonus(email: "ankit@tothenew.com")
+}
+catch BonusError.notEightyPercent(let name){
+        print("\(name) has not 80% attendence")
+}
+catch BonusError.notCompletedYear(let name){
+    //print(error)
+    print("\(name) has not completed a year yet")
+}
+catch BonusError.absentOnDay(let name) {
+    print("\(name)is absent today")
+}
+catch BonusError.noHotcompetency(let name) {
+    print("\(name) is not in a comptency falling under bonus program")
+}
+
+
+do
+ {
+    try bonusProg.allowedForBonus(email: "mithlesh@tothenew.com")
+ }
+catch BonusError.absentOnDay(let name) {
+    print("\(name)is absent today")
+}
+catch BonusError.notCompletedYear(let name){
+    //print(error)
+    print("\(name) has not completed a year yet")
+}
+catch BonusError.notEightyPercent(let name) {
+    print("\(name) has not 80% attendence")
+}
+catch BonusError.noHotcompetency(let name) {
+    print("\(name) is not in a comptency falling under bonus program")
 }
