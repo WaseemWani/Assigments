@@ -141,11 +141,24 @@ print("--------------------------------------------------------------------")
 
 //: Question3. Write a program which loads the data from a datasource of 10 employees looks like below, Program would help to give salary bonus to employees. Which is based on some conditions but if employee is not able to satisfy the condition program should throw the error with specific error condition and its description should be printed.
 enum BonusError: Error {
-    case absentOnDay(str: String)
-    case notEightyPercent(str: String)
-    case notCompletedYear(str: String)
-    case noHotcompetency(str: String)
+    case absentOnDay(String)
+    case notEightyPercent(String)
+    case notCompletedYear(String)
+    case noHotcompetency(String)
+    
+//   var errorDiscription: String {
+//        switch self {
+//         case .notEightyPercent: return("has not eighty percent attendance")
+//
+//         case .notCompletedYear: return ("has not completed a year with us")
+//
+//         case .noHotcompetency: return ("is in the competency that does not fall in bonus program")
+//
+//         case .absentOnDay: return ("is absent today")
+//    //}
+//  }
 }
+
 
 struct Employee {
         
@@ -160,66 +173,43 @@ struct Employee {
         
 class BonusProgram {
     
-            let  employees: [Employee] = [ Employee(empID: 320, empName: "Muskan", empEmail: "muskaan@tothenew.com", joiningDate: 2019, competency: "iOS", attendancePercent: 90, isPresent: true),
+           let  employees: [Employee] = [ Employee(empID: 320, empName: "Muskan", empEmail: "muskaan@tothenew.com", joiningDate: 2019, competency: "iOS", attendancePercent: 90, isPresent: true),
             Employee(empID: 321, empName: "Mithlesh", empEmail: "mithlesh@tothenew.com", joiningDate: 2017, competency: "java", attendancePercent: 80, isPresent: true),
             Employee(empID: 323, empName: "Ankit", empEmail: "ankit@tothenew.com", joiningDate: 2017, competency: "Android", attendancePercent: 80, isPresent: true),
             Employee(empID: 324, empName: "Sachin", empEmail: "sachin@tothenew.com", joiningDate: 2019, competency: "iOS", attendancePercent: 81, isPresent: true) ,
-            Employee(empID: 325, empName: "Muskan", empEmail: "muskaan@tothenew.com", joiningDate: 2018 , competency: "iOS", attendancePercent: 89, isPresent: false) ,
-            Employee(empID: 326, empName: "Merry", empEmail: "merry@tothenew.com", joiningDate: 2015 , competency: "iOS", attendancePercent: 95, isPresent: true) ]
+//            Employee(empID: 325, empName: "Muskan", empEmail: "muskaan@tothenew.com", joiningDate: 2018 , competency: "iOS", attendancePercent: 89, isPresent: false) ,
+            Employee(empID: 326, empName: "Merry", empEmail: "merry@tothenew.com", joiningDate: 2015 , competency: "java", attendancePercent: 95, isPresent: true) ]
         
-    func allowedForBonus( email: String) throws{
-        var eligibility: Bool = true, currentYear = 2019
+    func allowedForBonus( email: String) throws {
+        let currentYear = 2019
+        let employee = employees.filter { $0.empEmail == email }
+        //print(employee)
         
-        for emp in employees
-        {
-            if (emp.empEmail == email)
-            {
-
-               if (emp.isPresent != true)  {
-                     eligibility = false
-                  print(emp.empName)
-                throw BonusError.absentOnDay(str: emp.empName)
-                
-                 }
-               else {
-                  eligibility = true
-                 }
-        
-               if (emp.attendancePercent < 80) {
-                     eligibility = false
-                throw BonusError.notEightyPercent(str: emp.empName)
-                 }
-               else {
-                 eligibility = false
-                }
-        
-               if(currentYear - emp.joiningDate <= 0 ) {
-                   eligibility = false
-                throw BonusError.notCompletedYear(str: emp.empName)
-                
-                }
-               else {
-               eligibility = true
+               if (employee[0].isPresent != true)  {
+                  print(employee[0].empName)
+                  throw BonusError.absentOnDay(employee[0].empName)
                }
         
+               if (employee[0].attendancePercent < 80) {
+                   throw BonusError.notEightyPercent(employee[0].empName)
+               }
+     
+               if(currentYear - employee[0].joiningDate <= 0 ) {
+                   throw BonusError.notCompletedYear(employee[0].empName)
+               }
+     
         
-              if(emp.competency == "iOS" || emp.competency == "Bigdata" || emp.competency == "Android" || emp.competency == "AI") {
-                    eligibility = true
-                
-                }
-              else {
-                 eligibility = false
-                 throw BonusError.noHotcompetency(str: emp.empName)
-                }
-            
+               if((employee[0].competency != "iOS" || employee[0].competency != "Bigdata" || employee[0].competency != "Android" || employee[0].competency != "AI")) {
+                   print("eligible for bonus")
+                 throw BonusError.noHotcompetency(employee[0].empName)
+               }
         
-              if(eligibility == true) {
-              print(emp.empName,"eligible for bonus")
-                }
+            else {
+                print("\(employee[0].empName) is eligible for bonus")
               }
         }
     }
- }
+
 
 print("\n--------------------------------------------------------------------")
 print("Question 3. Error handling. Bonus Program")
@@ -231,9 +221,8 @@ do {
     try bonusProg.allowedForBonus(email: "muskaan@tothenew.com")
   }
  catch BonusError.absentOnDay(let name) {
-      print("\(name)is absent today")
+      print("\(name) is absent today")
 }
-
 catch BonusError.notCompletedYear(let name) {
     print("\(name) has not completed a year yet")
 }
@@ -246,7 +235,7 @@ catch BonusError.noHotcompetency(let name) {
 }
 
 do {
-    try bonusProg.allowedForBonus(email: "ankit@tothenew.com")
+    try bonusProg.allowedForBonus(email: "merry@tothenew.com")
 }
 catch BonusError.notEightyPercent(let name){
         print("\(name) has not 80% attendence")
@@ -261,6 +250,7 @@ catch BonusError.absentOnDay(let name) {
 catch BonusError.noHotcompetency(let name) {
     print("\(name) is not in a comptency falling under bonus program")
 }
+
 
 
 do
