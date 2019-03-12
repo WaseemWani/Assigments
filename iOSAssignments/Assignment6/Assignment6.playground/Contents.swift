@@ -146,17 +146,17 @@ enum BonusError: Error {
     case notCompletedYear(String)
     case noHotcompetency(String)
     
-//   var errorDiscription: String {
-//        switch self {
-//         case .notEightyPercent: return("has not eighty percent attendance")
-//
-//         case .notCompletedYear: return ("has not completed a year with us")
-//
-//         case .noHotcompetency: return ("is in the competency that does not fall in bonus program")
-//
-//         case .absentOnDay: return ("is absent today")
-//    //}
-//  }
+   var errorDiscription: String {
+        switch self {
+         case .notEightyPercent: return("has not eighty percent attendance")
+
+         case .notCompletedYear: return ("has not completed a year with us")
+
+         case .noHotcompetency: return ("is in the competency that does not fall in bonus program")
+
+         case .absentOnDay: return ("is absent today")
+    }
+  }
 }
 
 
@@ -187,7 +187,7 @@ class BonusProgram {
         
                if (employee[0].isPresent != true)  {
                   print(employee[0].empName)
-                  throw BonusError.absentOnDay(employee[0].empName)
+                throw BonusError.absentOnDay(employee[0].empName)
                }
         
                if (employee[0].attendancePercent < 80) {
@@ -221,7 +221,8 @@ do {
     try bonusProg.allowedForBonus(email: "muskaan@tothenew.com")
   }
  catch BonusError.absentOnDay(let name) {
-      print("\(name) is absent today")
+    
+    print("\(name) is absent today")
 }
 catch BonusError.notCompletedYear(let name) {
     print("\(name) has not completed a year yet")
