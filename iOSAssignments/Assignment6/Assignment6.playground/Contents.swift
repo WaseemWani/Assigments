@@ -148,13 +148,13 @@ enum BonusError: Error {
     
    var errorDiscription: String {
         switch self {
-         case .notEightyPercent: return("has not eighty percent attendance")
+         case .notEightyPercent(let name): return("\(name) has not eighty percent attendance")
 
-         case .notCompletedYear: return ("has not completed a year with us")
+         case .notCompletedYear(let name): return ("\(name) has not completed a year with us")
 
-         case .noHotcompetency: return ("is in the competency that does not fall in bonus program")
+         case .noHotcompetency(let name): return ("\(name) is in the competency that does not fall in bonus program")
 
-         case .absentOnDay: return ("is absent today")
+         case .absentOnDay(let name): return ("\(name) is absent today")
     }
   }
 }
@@ -173,11 +173,10 @@ struct Employee {
         
 class BonusProgram {
     
-           let  employees: [Employee] = [ Employee(empID: 320, empName: "Muskan", empEmail: "muskaan@tothenew.com", joiningDate: 2019, competency: "iOS", attendancePercent: 90, isPresent: true),
+           let  employees: [Employee] = [ Employee(empID: 320, empName: "Muskan", empEmail: "muskaan@tothenew.com", joiningDate: 2019, competency: "iOS", attendancePercent: 40, isPresent: false),
             Employee(empID: 321, empName: "Mithlesh", empEmail: "mithlesh@tothenew.com", joiningDate: 2017, competency: "java", attendancePercent: 80, isPresent: true),
             Employee(empID: 323, empName: "Ankit", empEmail: "ankit@tothenew.com", joiningDate: 2017, competency: "Android", attendancePercent: 80, isPresent: true),
             Employee(empID: 324, empName: "Sachin", empEmail: "sachin@tothenew.com", joiningDate: 2019, competency: "iOS", attendancePercent: 81, isPresent: true) ,
-//            Employee(empID: 325, empName: "Muskan", empEmail: "muskaan@tothenew.com", joiningDate: 2018 , competency: "iOS", attendancePercent: 89, isPresent: false) ,
             Employee(empID: 326, empName: "Merry", empEmail: "merry@tothenew.com", joiningDate: 2015 , competency: "java", attendancePercent: 95, isPresent: true) ]
         
     func allowedForBonus( email: String) throws {
@@ -186,8 +185,8 @@ class BonusProgram {
         //print(employee)
         
                if (employee[0].isPresent != true)  {
-                  print(employee[0].empName)
-                throw BonusError.absentOnDay(employee[0].empName)
+                  //print(employee[0].empName)
+                  throw BonusError.absentOnDay(employee[0].empName)
                }
         
                if (employee[0].attendancePercent < 80) {
@@ -204,7 +203,7 @@ class BonusProgram {
                  throw BonusError.noHotcompetency(employee[0].empName)
                }
         
-            else {
+         else {
                 print("\(employee[0].empName) is eligible for bonus")
               }
         }
@@ -220,54 +219,63 @@ let bonusProg = BonusProgram()
 do {
     try bonusProg.allowedForBonus(email: "muskaan@tothenew.com")
   }
- catch BonusError.absentOnDay(let name) {
+ catch {
     
-    print("\(name) is absent today")
-}
-catch BonusError.notCompletedYear(let name) {
-    print("\(name) has not completed a year yet")
-}
-
-catch BonusError.notEightyPercent(let name) {
-    print("\(name) has not 80% attendence")
-}
-catch BonusError.noHotcompetency(let name) {
-    print("\(name) is not in a comptency falling under bonus program")
+    if let er = error as? BonusError{
+        
+        switch er {
+        case .absentOnDay:
+            print(er.errorDiscription)
+        case .notEightyPercent:
+            print(er.errorDiscription)
+        case .notCompletedYear:
+            print(er.errorDiscription)
+        case .noHotcompetency:
+            print(er.errorDiscription)
+        }
+    }
 }
 
 do {
     try bonusProg.allowedForBonus(email: "merry@tothenew.com")
 }
-catch BonusError.notEightyPercent(let name){
-        print("\(name) has not 80% attendence")
-}
-catch BonusError.notCompletedYear(let name){
-    //print(error)
-    print("\(name) has not completed a year yet")
-}
-catch BonusError.absentOnDay(let name) {
-    print("\(name)is absent today")
-}
-catch BonusError.noHotcompetency(let name) {
-    print("\(name) is not in a comptency falling under bonus program")
-}
+catch {
+    if let er = error as? BonusError {
+    switch er {
+    case BonusError.notEightyPercent:
+        print(er.errorDiscription)
+        
+    case .notCompletedYear:
+    print(er.errorDiscription)
 
-
+    case .absentOnDay:
+    print(er.errorDiscription)
+    
+    case .noHotcompetency:
+        print(er.errorDiscription)
+      }
+   }
+}
 
 do
  {
     try bonusProg.allowedForBonus(email: "mithlesh@tothenew.com")
  }
-catch BonusError.absentOnDay(let name) {
-    print("\(name)is absent today")
+catch {
+    if let er = error as? BonusError {
+        switch er {
+        case BonusError.notEightyPercent:
+            print(er.errorDiscription)
+            
+        case .notCompletedYear:
+            print(er.errorDiscription)
+            
+        case .absentOnDay:
+            print(er.errorDiscription)
+            
+        case .noHotcompetency:
+            print(er.errorDiscription)
+        }
+    }
 }
-catch BonusError.notCompletedYear(let name){
-    //print(error)
-    print("\(name) has not completed a year yet")
-}
-catch BonusError.notEightyPercent(let name) {
-    print("\(name) has not 80% attendence")
-}
-catch BonusError.noHotcompetency(let name) {
-    print("\(name) is not in a comptency falling under bonus program")
-}
+
