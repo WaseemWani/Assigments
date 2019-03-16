@@ -25,8 +25,8 @@ class ViewController4: UIViewController {
     }
     
     @IBAction func pop2() {
-        let xyz1 = self.navigationController?.viewControllers
-        self.navigationController?.popToViewController(xyz1![2], animated: true)
+        let view = self.navigationController?.viewControllers
+        self.navigationController?.popToViewController(view![2], animated: true)
     }
 
     override func viewDidLoad() {
@@ -36,12 +36,20 @@ class ViewController4: UIViewController {
         //  Question4 Customization of navigation item
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "back to view 3", style: .plain, target: self, action: #selector(self.backButton))
         // Do any additional setup after loading the view.
-    }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "go to view 5", style: .plain, target: self, action: #selector(self.forwardNavigate))
+ }
+    
     @objc func backButton() {
         let ViewController = self.navigationController?.viewControllers
-        self.navigationController?.popToViewController(ViewController![2], animated: true)//(animated: true)
+        self.navigationController?.popToViewController(ViewController![2], animated: true)
     }
     
+    @objc func forwardNavigate() {
+        let viewStrory = UIStoryboard(name: "Main", bundle: nil)
+        let view = viewStrory.instantiateViewController(withIdentifier: "ViewController5")
+        self.navigationController?.pushViewController(view, animated: true)
+    }
+
 
     /*
     // MARK: - Navigation

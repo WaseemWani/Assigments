@@ -13,7 +13,7 @@ class ViewController1: UIViewController, UITextFieldDelegate{
     @IBOutlet var button: UIButton!
     @IBOutlet var label: UILabel!
     
-    @IBAction func jump() {
+    @IBAction func pushViewController() {
         let viewController1 = UIStoryboard(name: "Main", bundle: nil)
         let view = viewController1.instantiateViewController(withIdentifier: "ViewController2")
         self.navigationController?.pushViewController(view, animated: true)
