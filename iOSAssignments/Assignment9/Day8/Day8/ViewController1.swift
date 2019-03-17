@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController1: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController1: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var phoneNumberTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var birthDateTextField: UITextField!
     @IBOutlet var placeOfBirthtextfield: UITextField!
     @IBOutlet var doneButton: UIButton!
@@ -23,25 +23,39 @@ class ViewController1: UIViewController, UITextFieldDelegate, UIPickerViewDelega
     @IBOutlet var placeOfBirthPickerHolder: UIView!
     @IBOutlet var donePlaceOfBirthButton: UIButton!
     @IBOutlet var submitButton: UIButton!
-    //theTextfield.inputView = thePicker
+    
+    let profilePicker = UIImagePickerController()
+    
     var cities = ["Delhi", "Noida","Lukcnow","Allahabad","Jaipur","Aligarh","Banaras","Bangalore","Hyderabad"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         placeOfBirthPicker.delegate = self
         placeOfBirthPicker.dataSource = self
-    }
+        //profilePicker.delegate = self
+        profilePicker.delegate =  self
     
+        profilePic.layer.cornerRadius = profilePic.frame.size.height / 2.0
+        profilePic.layer.masksToBounds = true
+    }
     
     // function to push 2nd view Controller on this view Controller
-    @IBAction func pushSecondViewController() {
-        let signUpViewObj = UIStoryboard(name: "Main", bundle: nil)
-        let view1 = signUpViewObj.instantiateViewController(withIdentifier: "ViewController2")
-        self.navigationController?.pushViewController(view1, animated: true)
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        profilePic.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
     }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
     
-    
+    // Function for opening photo library on click
+    @IBAction func uploadPicture(_ sender: Any) {
+        profilePicker.allowsEditing = false
+        profilePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        self.present(profilePicker, animated:  true, completion:  nil)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -57,37 +71,23 @@ class ViewController1: UIViewController, UITextFieldDelegate, UIPickerViewDelega
             
         else if textField == phoneNumberTextField {
             textField.resignFirstResponder()
-            passwordTextField.becomeFirstResponder()
+            //passwordTextField.becomeFirstResponder()
         }
-        
-        else if textField == passwordTextField  {
-            textField.resignFirstResponder()
-           
-        }
-        
-//        else if textField == placeOfBirthtextfield {
-//            textField.resignFirstResponder()
-//            //birthDateTextField.becomeFirstResponder()
-//        }
-        
-//        else if textField == birthDateTextField {
-//            textField.resignFirstResponder()
-//        }
-      
         return true
     }
-
 
 func textFieldDidBeginEditing(_ textField: UITextField) {
 
        if textField == birthDateTextField {
-              textField.resignFirstResponder()
-            pickerHolder.isHidden = false
+            //textField.keyboardAppearance
+             pickerHolder.isHidden = false
+             textField.resignFirstResponder()
             //dateOfBirthPicker.isHidden = false
         }
 
         if textField == placeOfBirthtextfield {
             placeOfBirthPickerHolder.isHidden = false
+            textField.resignFirstResponder()
             //placeOfBirthPicker.isHidden = true
         }
 
@@ -98,6 +98,7 @@ func textFieldDidBeginEditing(_ textField: UITextField) {
     placeOfBirthPickerHolder.isHidden = true
     }
     
+    
     /*
     // MARK: - Navigation
 
@@ -107,6 +108,7 @@ func textFieldDidBeginEditing(_ textField: UITextField) {
         // Pass the selected object to the new view controller.
     }
     */
+    
     @IBAction func doneBtnClick(_ sender: Any) {
         let datePicked = dateOfBirthPicker.date
         let dateFormatType = DateFormatter()
@@ -136,9 +138,24 @@ func textFieldDidBeginEditing(_ textField: UITextField) {
     
     @IBAction func check(_ sender: Any) {
         
-        if (usernameTextField.text?.isEmpty == true || emailTextField.text?.isEmpty == true || passwordTextField.text?.isEmpty == true || placeOfBirthtextfield.text?.isEmpty == true || birthDateTextField.text?.isEmpty == true) {
+        if (usernameTextField.text?.isEmpty == true || emailTextField.text?.isEmpty == true || placeOfBirthtextfield.text?.isEmpty == true || birthDateTextField.text?.isEmpty == true) {
             submitButton.isEnabled = true
         }
     }
-}
-
+     
+    @IBAction func pushSecondViewController() {
+            let signUpViewObj = UIStoryboard(name: "Main", bundle: nil)
+            let view1 = signUpViewObj.instantiateViewController(withIdentifier: "ViewController2")
+            self.navigationController?.pushViewController(view1, animated: true)
+        }
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        // get a reference to the second view controller
+//        let secondViewController = segue.destination as! ViewController2
+//
+//        // set a variable in the second view controller with the String to pass
+//        secondViewController.imageRecieved = profilePic.image
+//
+//    }
