@@ -139,9 +139,10 @@ print("using map function\n\(doubledArray1)")
 
 
 // using compactMap function, does same task as map functiion
-var array2 = numberArray.compactMap({(value: Int) ->Int in
+var array2 = numberArray.compactMap({(value: Int) -> Int in
      return value * 2
 } )
+
 print("\n-----------------------------------------------------\n")
 print("using compactMap function\n \(array2)")
 

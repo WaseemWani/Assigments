@@ -109,7 +109,7 @@ class ApnaCalculator {
         self.operand2 = operand2
     }
     
-    func calEquals(_ calcFunc: (Double, Double) -> Double, _ operand1: Double,_ operand2: Double ) -> Double {
+    func calEquals(_ calcFunc: (Double, Double) -> Double, _ operand1: Double, _ operand2: Double ) -> Double {
         
         
         return calcFunc(operand1, operand2)
