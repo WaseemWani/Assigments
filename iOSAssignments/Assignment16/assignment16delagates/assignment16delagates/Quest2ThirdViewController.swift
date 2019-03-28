@@ -9,7 +9,9 @@
 import UIKit
 
 class Quest2ThirdViewController: UIViewController {
+    
     @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "third view controller"
@@ -18,8 +20,12 @@ class Quest2ThirdViewController: UIViewController {
     }
     
 
-    @objc func notifyButtontapped() {
-        label.text = "i have been notified"
+    @objc func notifyButtontapped(_ notification: NSNotification) {
+        
+        if let msg = notification.userInfo?["msg"] as? String {
+            label.text = msg
+        }
+        //label.text = "I have been notified"
         label.backgroundColor = .red
     }
 
@@ -34,10 +40,9 @@ class Quest2ThirdViewController: UIViewController {
     */
     
     @IBAction func buttonClickToNotifyTapped(_ sender: Any) {
+        let broadcastMsg: [String: String] = ["msg" :"this is the boadcast message"];        NotificationCenter.default.post(name: Notification.Name(rawValue: "notificationIdentifier"), object: self, userInfo: broadcastMsg)
         
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "notificationIdentifier"), object: self)
-        
-        label.text = " Status: The controller has been notified."
+        label.text = " Status: The controllers have been notified."
     }
     
 

@@ -20,8 +20,10 @@ class Quest2FirstViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(notifiyButtonTapped), name: NSNotification.Name(rawValue: "notificationIdentifier"), object: nil)
     }
     
-    @objc func notifiyButtonTapped() {
-      notifLabel.text = "I have been notified"
+    @objc func notifiyButtonTapped(_ notification: NSNotification) {
+        if let msg =  notification.userInfo?["msg"] as? String {
+        notifLabel.text = msg   //"I have been notified"
+        }
         notifLabel.backgroundColor = .red
     }
     

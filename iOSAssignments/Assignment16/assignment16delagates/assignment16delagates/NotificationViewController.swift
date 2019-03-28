@@ -10,16 +10,16 @@ import UIKit
 import UserNotifications
 class NotificationViewController: UIViewController, UNUserNotificationCenterDelegate {
     
+    @IBOutlet weak var notifButton: UIButton!
     let center = UNUserNotificationCenter.current()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        notifButton.titleLabel?.text = "tap to schedule notification"
-    registerLocal()
+        notifButton.titleLabel?.text = "Tap to schedule notification"
+         registerLocal()
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBOutlet weak var notifButton: UIButton!
     @objc func registerLocal() {
         //        let center = UNUserNotificationCenter.current()
         
@@ -34,16 +34,16 @@ class NotificationViewController: UIViewController, UNUserNotificationCenterDele
   
 
     @IBAction func notificationButtonTapped(_ sender: Any) {
-        notifButton.titleLabel?.text = "notifcation schedule"
+        //notifButton.titleLabel?.text = "notifcation scheduled"
         
         center.removeAllPendingNotificationRequests()
         registerCategories()
         let content = UNMutableNotificationContent()
-        content.title = "Hi User"
+        content.title = "Hi Waseem"
         content.body = "This is the schdeuled notification."
         content.categoryIdentifier = "alarm"
         //content.userInfo = ["set by": "Waseem"]
-        content.sound = UNNotificationSound.default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "toThePoint.m4r"))
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         
@@ -51,7 +51,7 @@ class NotificationViewController: UIViewController, UNUserNotificationCenterDele
         center.add(request)
     }
     
-    
+ 
     func registerCategories() {
         
         center.delegate = self
@@ -79,4 +79,3 @@ class NotificationViewController: UIViewController, UNUserNotificationCenterDele
         // Pass the selected object to the new view controller.
     }
     */
-

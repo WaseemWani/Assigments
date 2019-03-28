@@ -28,16 +28,7 @@ class ViewController: UIViewController, Passable {
  
 
     func passData(_ dict: [String:String]) {
-        //let  dict: Dictionary = ["Name": name, "Age": age, "Parentage": parentage]
-   
-        //print("heLLO"+name)
-    //        let vc: ViewController = self.storyboard?.instantiateViewController(withIdentifier:"viewController2") as! ViewController
-    //        vc.delegate = self
-    //
-//        var keyvalues = [Any]() //, values = []
-//        for (key, value) in dict {
-//         keyvalues.append([key, value])
-//        }
+    
         passedDateLabel.text = "the details entered are:\n Name: \(dict["Name"]!+"\nAge:  "+dict["Age"]!+"\nParentage: "+dict["Parentage"]!)"
   }
 }

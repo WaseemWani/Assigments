@@ -18,6 +18,7 @@
 		0409D94E224666AA00FD001A /* Quest2SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409D94D224666AA00FD001A /* Quest2SecondViewController.swift */; };
 		0409D95022466E6B00FD001A /* Quest2ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409D94F22466E6B00FD001A /* Quest2ThirdViewController.swift */; };
 		0409D95222473CAF00FD001A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409D95122473CAF00FD001A /* NotificationViewController.swift */; };
+		0415D144224CC214009F9C3D /* toThePoint.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 0415D143224C98C4009F9C3D /* toThePoint.m4r */; };
 		04AB120F224754D7000A886A /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB120E224754D7000A886A /* IndexViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		0409D94D224666AA00FD001A /* Quest2SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest2SecondViewController.swift; sourceTree = "<group>"; };
 		0409D94F22466E6B00FD001A /* Quest2ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest2ThirdViewController.swift; sourceTree = "<group>"; };
 		0409D95122473CAF00FD001A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		0415D143224C98C4009F9C3D /* toThePoint.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = toThePoint.m4r; sourceTree = "<group>"; };
 		04AB120E224754D7000A886A /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +54,7 @@
 		0409D92822463FEC00FD001A = {
 			isa = PBXGroup;
 			children = (
+				0415D143224C98C4009F9C3D /* toThePoint.m4r */,
 				0409D93322463FEC00FD001A /* assignment16delagates */,
 				0409D93222463FEC00FD001A /* Products */,
 			);
@@ -69,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				0409D93422463FEC00FD001A /* AppDelegate.swift */,
+				04AB120E224754D7000A886A /* IndexViewController.swift */,
 				0409D93622463FEC00FD001A /* ViewController.swift */,
 				0409D9492246404C00FD001A /* PassdataVC.swift */,
 				0409D94B224663AF00FD001A /* Quest2FirstViewController.swift */,
@@ -76,7 +80,6 @@
 				0409D94F22466E6B00FD001A /* Quest2ThirdViewController.swift */,
 				0409D95122473CAF00FD001A /* NotificationViewController.swift */,
 				0409D93822463FEC00FD001A /* Main.storyboard */,
-				04AB120E224754D7000A886A /* IndexViewController.swift */,
 				0409D93E22463FED00FD001A /* Assets.xcassets */,
 				0409D94022463FED00FD001A /* LaunchScreen.storyboard */,
 				0409D94322463FED00FD001A /* Info.plist */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0409D94222463FED00FD001A /* LaunchScreen.storyboard in Resources */,
+				0415D144224CC214009F9C3D /* toThePoint.m4r in Resources */,
 				0409D93F22463FED00FD001A /* Assets.xcassets in Resources */,
 				0409D93A22463FEC00FD001A /* Main.storyboard in Resources */,
 			);
