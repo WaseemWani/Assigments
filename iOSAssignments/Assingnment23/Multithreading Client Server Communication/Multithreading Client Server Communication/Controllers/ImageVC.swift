@@ -8,15 +8,24 @@
 
 import UIKit
 
+protocol Customize {
+    func addBorder()
+}
+
+
 class ImageVC: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var authorButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var downloadButton: UIButton!
      var openingUrl = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Image Details"
+      imageView.addBorder()
+      downloadButton.addBorder()
+      authorButton.addBorder()
         // Do any additional setup after loading the view.
     }
     
@@ -43,3 +52,17 @@ class ImageVC: UIViewController {
     */
 
 }
+// extension on UIBUtton class, conforming the protocol customize. This is used to cuctomize Buttons
+//@IBDesignable
+extension UIButton: Customize {
+    func addBorder() {
+        self.layer.cornerRadius = 15
+        //self.tintColor = UIColor.blue.cgColor
+        self.layer.borderColor = UIColor.blue.cgColor
+        self.layer.borderWidth = 2
+        self.layer.shadowColor = UIColor.cyan.cgColor
+    }
+    
+    
+}
+

@@ -39,3 +39,21 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         self.authorNameLabel.text = authorName
     }
 }
+
+// extension on UIlabel to do some customization
+extension UILabel: Customize {
+    func addBorder() {
+        self.layer.cornerRadius = 12
+        self.layer.borderWidth = 2
+    }
+}
+
+extension UIImageView: Customize
+    {
+    func addBorder() {
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 2
+    }
+ }
+    
+

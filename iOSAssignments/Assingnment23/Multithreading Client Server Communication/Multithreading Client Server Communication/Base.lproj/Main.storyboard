@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1WW-SK-VZw">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Multithreading_Client_Server_Communication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UZE-Nu-NX9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cDk-Sa-qHw">
                                     <size key="itemSize" width="120" height="120"/>
@@ -57,42 +57,76 @@
             <objects>
                 <viewController storyboardIdentifier="ImageVC" id="S9p-pd-KPI" customClass="ImageVC" customModule="Multithreading_Client_Server_Communication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vct-zq-uJf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wmM-71-jMH">
-                                <rect key="frame" x="68" y="99" width="239" height="229"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wmM-71-jMH">
+                                <rect key="frame" x="40.5" y="50" width="239" height="222"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="239" id="6UZ-kV-qe9"/>
+                                    <constraint firstAttribute="height" constant="222" id="D34-pw-1tn"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtb-Wc-NMt">
-                                <rect key="frame" x="260" y="372" width="47" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Author"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtb-Wc-NMt">
+                                <rect key="frame" x="204.5" y="302" width="75" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.55862210130000001" blue="0.12965336190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="FZc-ef-aNj"/>
+                                    <constraint firstAttribute="height" constant="34" id="Rgq-AU-w9g"/>
+                                </constraints>
+                                <state key="normal" title="Author">
+                                    <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="authorBtnTapped:" destination="S9p-pd-KPI" eventType="touchUpInside" id="nZO-gN-iUA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRX-01-HpK">
-                                <rect key="frame" x="68" y="364" width="48" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRX-01-HpK">
+                                <rect key="frame" x="40.5" y="302" width="75" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.54760863319999997" blue="0.1891682479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="YAA-0z-4Nv"/>
+                                    <constraint firstAttribute="height" constant="34" id="Zfe-oO-pi0"/>
+                                </constraints>
+                                <state key="normal" title="Download">
+                                    <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logoutBtntapped:" destination="S9p-pd-KPI" eventType="touchUpInside" id="Dho-qt-qNf"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4JI-2c-qeU">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="xSr-4v-jTV">
+                                        <connections>
+                                            <outlet property="titleView" destination="4JI-2c-qeU" id="Lzx-7t-fVo"/>
+                                        </connections>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qtb-Wc-NMt" firstAttribute="top" secondItem="wmM-71-jMH" secondAttribute="bottom" constant="30" id="EEg-vi-Qvo"/>
+                            <constraint firstItem="RRX-01-HpK" firstAttribute="top" secondItem="wmM-71-jMH" secondAttribute="bottom" constant="30" id="I6L-kW-veW"/>
+                            <constraint firstItem="qtb-Wc-NMt" firstAttribute="trailing" secondItem="wmM-71-jMH" secondAttribute="trailing" id="QiN-to-bQY"/>
+                            <constraint firstItem="wmM-71-jMH" firstAttribute="top" secondItem="riA-o0-Vft" secondAttribute="top" constant="30" id="dg6-Ru-4Sh"/>
+                            <constraint firstItem="wmM-71-jMH" firstAttribute="centerX" secondItem="Vct-zq-uJf" secondAttribute="centerX" id="my2-0p-cr1"/>
+                            <constraint firstItem="RRX-01-HpK" firstAttribute="leading" secondItem="wmM-71-jMH" secondAttribute="leading" id="yg6-Dh-sTu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="riA-o0-Vft"/>
                     </view>
                     <connections>
                         <outlet property="authorButton" destination="qtb-Wc-NMt" id="QIV-VI-bk0"/>
+                        <outlet property="downloadButton" destination="RRX-01-HpK" id="J6r-Jb-ObK"/>
                         <outlet property="imageView" destination="wmM-71-jMH" id="4Mw-yt-YvF"/>
-                        <outlet property="logoutButton" destination="RRX-01-HpK" id="eku-Hy-A8Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZI-nq-5uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096.8000000000002" y="-10.344827586206897"/>
+            <point key="canvasLocation" x="2096.25" y="-11.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WfX-wR-Mwo">
@@ -100,7 +134,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1WW-SK-VZw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PSS-iv-pHF">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

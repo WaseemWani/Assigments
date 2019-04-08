@@ -10,21 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var photosArray = [DataModel]()
+    var photosArray = [DataModel]() // array of type Struct DataModel, this will be used to fill the collection view cells
     
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Picsum Photos"
         
         getData()
         
         let nib = UINib.init(nibName: "PhotosCollectionViewCell", bundle: nil)
         photosCollectionView.register(nib, forCellWithReuseIdentifier: "PhotosCollectionViewCell")
+    
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    // function to fetch data from the api
     func getData() {
         
         let url = URL(string: "https://picsum.photos/list")
@@ -45,12 +48,11 @@ class ViewController: UIViewController {
                }
             
         }.resume()
-
-
 }
 
 }
 
+// extension on of the above class, to implement delegate and data source methods
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -74,21 +76,23 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let detail : ImageVC =  storyBoard.instantiateViewController(withIdentifier: "ImageVC") as! ImageVC
-        detail.openingUrl = photosArray[indexPath.row].author_url
+        let imageDetails : ImageVC =  storyBoard.instantiateViewController(withIdentifier: "ImageVC") as! ImageVC
+        imageDetails.openingUrl = photosArray[indexPath.row].author_url
         
         let imageurl = "https://picsum.photos/240/320?image=\(photosArray[indexPath.row].id+1)"
         guard let url = URL(string: imageurl) else
         {
             return
         }
+        
         UIImage.loadFrom(url: url) { image in
-            detail.imageView.image = image
+            imageDetails.imageView.image = image
         }
-        self.navigationController?.pushViewController(detail, animated: true)
+        self.navigationController?.pushViewController(imageDetails, animated: true)
 
     }
     
@@ -110,5 +114,4 @@ extension UIImage {
             }
         }
     }
-    
 }

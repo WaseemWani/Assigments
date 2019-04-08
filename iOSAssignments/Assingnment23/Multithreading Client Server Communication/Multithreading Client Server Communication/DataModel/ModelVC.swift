@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+// Model to get json parsed data, in the below format, this will be presented on th UI
 struct DataModel: Decodable{
     let format: String
     let width: Int
