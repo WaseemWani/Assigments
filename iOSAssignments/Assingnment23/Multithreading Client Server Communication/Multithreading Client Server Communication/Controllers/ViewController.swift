@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    // function to fetch data from the api
+    // function to fetch data from the API
     func getData() {
         
         let url = URL(string: "https://picsum.photos/list")
@@ -53,11 +53,17 @@ class ViewController: UIViewController {
 }
 
 // extension on of the above class, to implement delegate and data source methods
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photosArray.count
     }
+    
+    // this function gives height and width to Image view in collection view
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: 180, height: 200)
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCollectionViewCell", for: indexPath) as? PhotosCollectionViewCell
@@ -93,9 +99,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             imageDetails.imageView.image = image
         }
         self.navigationController?.pushViewController(imageDetails, animated: true)
-
     }
-    
+
     
 }
 

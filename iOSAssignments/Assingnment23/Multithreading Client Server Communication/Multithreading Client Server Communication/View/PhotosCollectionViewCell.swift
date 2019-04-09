@@ -26,7 +26,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     }
 
     func recieveImage(image: UIImage) {
-        
+        imageView.addBorder()
         innerView.isHidden = false
         imageView.isHidden = false
         outerView.isHidden = true
@@ -45,13 +45,14 @@ extension UILabel: Customize {
     func addBorder() {
         self.layer.cornerRadius = 12
         self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.green.cgColor
     }
 }
 
 extension UIImageView: Customize
     {
     func addBorder() {
-        self.layer.cornerRadius = 5
+        self.layer.cornerRadius = 10
         self.layer.borderWidth = 2
     }
  }

@@ -61,14 +61,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wmM-71-jMH">
-                                <rect key="frame" x="40.5" y="50" width="239" height="222"/>
+                                <rect key="frame" x="40.5" y="66" width="239" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="239" id="6UZ-kV-qe9"/>
-                                    <constraint firstAttribute="height" constant="222" id="D34-pw-1tn"/>
+                                    <constraint firstAttribute="height" constant="335" id="D34-pw-1tn"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtb-Wc-NMt">
-                                <rect key="frame" x="204.5" y="302" width="75" height="34"/>
+                                <rect key="frame" x="204.5" y="431" width="75" height="34"/>
                                 <color key="backgroundColor" red="1" green="0.55862210130000001" blue="0.12965336190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="FZc-ef-aNj"/>
@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRX-01-HpK">
-                                <rect key="frame" x="40.5" y="302" width="75" height="34"/>
+                                <rect key="frame" x="40.5" y="431" width="75" height="34"/>
                                 <color key="backgroundColor" red="1" green="0.54760863319999997" blue="0.1891682479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="YAA-0z-4Nv"/>
@@ -112,7 +112,7 @@
                             <constraint firstItem="qtb-Wc-NMt" firstAttribute="top" secondItem="wmM-71-jMH" secondAttribute="bottom" constant="30" id="EEg-vi-Qvo"/>
                             <constraint firstItem="RRX-01-HpK" firstAttribute="top" secondItem="wmM-71-jMH" secondAttribute="bottom" constant="30" id="I6L-kW-veW"/>
                             <constraint firstItem="qtb-Wc-NMt" firstAttribute="trailing" secondItem="wmM-71-jMH" secondAttribute="trailing" id="QiN-to-bQY"/>
-                            <constraint firstItem="wmM-71-jMH" firstAttribute="top" secondItem="riA-o0-Vft" secondAttribute="top" constant="30" id="dg6-Ru-4Sh"/>
+                            <constraint firstItem="wmM-71-jMH" firstAttribute="top" secondItem="riA-o0-Vft" secondAttribute="top" constant="46" id="dg6-Ru-4Sh"/>
                             <constraint firstItem="wmM-71-jMH" firstAttribute="centerX" secondItem="Vct-zq-uJf" secondAttribute="centerX" id="my2-0p-cr1"/>
                             <constraint firstItem="RRX-01-HpK" firstAttribute="leading" secondItem="wmM-71-jMH" secondAttribute="leading" id="yg6-Dh-sTu"/>
                         </constraints>
@@ -134,7 +134,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1WW-SK-VZw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PSS-iv-pHF">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -55,11 +55,13 @@ class ImageVC: UIViewController {
 // extension on UIBUtton class, conforming the protocol customize. This is used to cuctomize Buttons
 //@IBDesignable
 extension UIButton: Customize {
+    
     func addBorder() {
         self.layer.cornerRadius = 15
         //self.tintColor = UIColor.blue.cgColor
         self.layer.borderColor = UIColor.blue.cgColor
         self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.blue.cgColor
         self.layer.shadowColor = UIColor.cyan.cgColor
     }
     
