@@ -9,9 +9,10 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    
     //var citieCoordinatesDict = ["delhi": [28.7041, 77.1025], "kolkata": [22.5726,  88.3639],"hyderabad": [ 17.3850,  78.4867], "ahmedabad" :[ 23.0225 , 72.5714] ]
     
     var annotationPoint = MKPointAnnotation()
@@ -29,20 +30,15 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let coordinates  = [location, location2]
         addCircularOverlay(location)
         addCircularOverlay(location2)
-        
-        // var linearray = [28.7041, 77.1025, 22.5726,  88.3639]
-        
-        //let location2  = CLLocationCoordinate2D( latitude: 17.3850,   longitude: 78.4867)
-        //let region = MKCoordinateRegion(//(location, location2)
-        //MKCoordinateRegion(center: location, latitudinalMeters: 5000.0, longitudinalMeters: 7000.0)
-        //mapView.setRegion(region, animated: true)
-
-        //
         let line = MKPolyline.init(coordinates: coordinates, count: coordinates.count)
         
         self.mapView.addOverlay(line)
     }
-    
+}
+
+
+// extension of the viewcontroller implementing mapview delegate methods
+extension ViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKCircle {
@@ -70,15 +66,39 @@ class ViewController: UIViewController, MKMapViewDelegate {
     mapView.addAnnotation(annotationPoint2)
     annotationPoint3.coordinate = CLLocationCoordinate2D(latitude: 17.3850, longitude:  78.4867)
     mapView.addAnnotation(annotationPoint3)
-    
     annotationPoint4.coordinate = CLLocationCoordinate2D(latitude: 23.0225 , longitude:  72.5714)
     mapView.addAnnotation(annotationPoint4)
     }
 
+   // this function adds circular overlay at the specified points
+  func addCircularOverlay(_ location: CLLocationCoordinate2D) {
 
-    func addCircularOverlay(_ location: CLLocationCoordinate2D) {
-        //let location = CLLocationCoordinate2D( latitude: 28.7041, longitude: 77.1025)
         let cirularOverlay = MKCircle(center: location, radius: 10)
         self.mapView.addOverlay(cirularOverlay)
     }
+    
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let customAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier) as? MKMarkerAnnotationView{
+            customAnnotationView.animatesWhenAdded = true
+            customAnnotationView.titleVisibility = .adaptive
+            customAnnotationView.subtitleVisibility = .adaptive
+            customAnnotationView.canShowCallout = true
+            customAnnotationView.rightCalloutAccessoryView = UIButton(type: .infoDark)
+            return customAnnotationView
+        }
+        return nil
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            //if let goToDescription = view.annotation?.title! {
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyBoard.instantiateViewController(withIdentifier: "NextViewController") as! ImageVC
+                self.navigationController?.pushViewController(controller, animated: true)
+            //}
+        }
+    }
 }
+

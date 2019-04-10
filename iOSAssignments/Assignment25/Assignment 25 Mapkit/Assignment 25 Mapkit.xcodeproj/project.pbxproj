@@ -13,6 +13,7 @@
 		04A55CE0225DEF76006DEE80 /* Assignment_25_Mapkit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04A55CDE225DEF76006DEE80 /* Assignment_25_Mapkit.xcdatamodeld */; };
 		04A55CE2225DEF76006DEE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A55CE1225DEF76006DEE80 /* Assets.xcassets */; };
 		04A55CE5225DEF76006DEE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A55CE3225DEF76006DEE80 /* LaunchScreen.storyboard */; };
+		04A55CED225E7A16006DEE80 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A55CEC225E7A16006DEE80 /* ImageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		04A55CE1225DEF76006DEE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04A55CE4225DEF76006DEE80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A55CE6225DEF77006DEE80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A55CEC225E7A16006DEE80 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				04A55CD7225DEF76006DEE80 /* AppDelegate.swift */,
 				04A55CD9225DEF76006DEE80 /* ViewController.swift */,
 				04A55CDB225DEF76006DEE80 /* Main.storyboard */,
+				04A55CEC225E7A16006DEE80 /* ImageVC.swift */,
 				04A55CE1225DEF76006DEE80 /* Assets.xcassets */,
 				04A55CE3225DEF76006DEE80 /* LaunchScreen.storyboard */,
 				04A55CE6225DEF77006DEE80 /* Info.plist */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A55CED225E7A16006DEE80 /* ImageVC.swift in Sources */,
 				04A55CDA225DEF76006DEE80 /* ViewController.swift in Sources */,
 				04A55CE0225DEF76006DEE80 /* Assignment_25_Mapkit.xcdatamodeld in Sources */,
 				04A55CD8225DEF76006DEE80 /* AppDelegate.swift in Sources */,
