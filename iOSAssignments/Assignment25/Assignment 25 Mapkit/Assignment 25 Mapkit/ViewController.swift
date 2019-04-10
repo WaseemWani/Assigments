@@ -78,27 +78,28 @@ extension ViewController: MKMapViewDelegate {
     }
     
 
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let customAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier) as? MKMarkerAnnotationView{
-            customAnnotationView.animatesWhenAdded = true
-            customAnnotationView.titleVisibility = .adaptive
-            customAnnotationView.subtitleVisibility = .adaptive
-            customAnnotationView.canShowCallout = true
-            customAnnotationView.rightCalloutAccessoryView = UIButton(type: .infoDark)
-            return customAnnotationView
-        }
-        return nil
-    }
-    
-    
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        if control == view.rightCalloutAccessoryView {
-            //if let goToDescription = view.annotation?.title! {
-                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let controller = storyBoard.instantiateViewController(withIdentifier: "NextViewController") as! ImageVC
-                self.navigationController?.pushViewController(controller, animated: true)
-            //}
-        }
-    }
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        if let customAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier) as? MKMarkerAnnotationView{
+//            customAnnotationView.animatesWhenAdded = true
+//            customAnnotationView.titleVisibility = .adaptive
+//            customAnnotationView.subtitleVisibility = .adaptive
+//            customAnnotationView.canShowCallout = true
+//            customAnnotationView.rightCalloutAccessoryView = UIButton(type: .infoDark)
+//            return customAnnotationView
+//        }
+//        return nil
+//    }
+//
+//
+//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+//        if control == view.rightCalloutAccessoryView {
+//            //if let goToDescription = view.annotation?.title! {
+//                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//                let controller = storyBoard.instantiateViewController(withIdentifier: "NextViewController") as! ImageVC
+//                self.navigationController?.pushViewController(controller, animated: true)
+//            //}
+//        }
+//    }
+
 }
 
