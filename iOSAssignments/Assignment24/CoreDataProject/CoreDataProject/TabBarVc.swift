@@ -13,14 +13,10 @@ class TabBarVc: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(UserDefaults.standard.bool(forKey: "userLogin") == false) {
+        if(UserDefaults.standard.bool(forKey: "UserLoggedIn") == false) {
             showLoginScreen()
             
         }
-        // else {
-//         addNewRecipe()
-//        }
-        // Do any additional setup after loading the view.
     }
   
     
@@ -32,7 +28,7 @@ class TabBarVc: UITabBarController {
     }
     
     @IBAction func logout() {
-        UserDefaults.standard.removeObject(forKey: "LoggenIn")
+        UserDefaults.standard.removeObject(forKey: "emailId")
         showLoginScreen()
     }
 
@@ -43,7 +39,6 @@ class TabBarVc: UITabBarController {
     }
 }
 
-    
 
     /*
     // MARK: - Navigation

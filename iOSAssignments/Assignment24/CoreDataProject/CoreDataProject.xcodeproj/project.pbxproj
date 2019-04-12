@@ -11,7 +11,8 @@
 		0428C3212259CD03007803FD /* RecipeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428C31F2259CD03007803FD /* RecipeViewCell.swift */; };
 		0428C3222259CD03007803FD /* RecipeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428C3202259CD03007803FD /* RecipeViewCell.xib */; };
 		0428C3242259D773007803FD /* RecipesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428C3232259D773007803FD /* RecipesVC.swift */; };
-		0431E6D7225F233E006D6093 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0431E6D6225F233E006D6093 /* Main.storyboard */; };
+		04A483812260BB9B00A99CE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A483802260BB9B00A99CE6 /* Main.storyboard */; };
+		04A483832260E8C600A99CE6 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A483822260E8C600A99CE6 /* ToastViewController.swift */; };
 		04B58F2122592EC100E0A1C3 /* LoginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B58F2022592EC100E0A1C3 /* LoginScreenVC.swift */; };
 		04B58F232259354500E0A1C3 /* TabBarVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B58F222259354500E0A1C3 /* TabBarVc.swift */; };
 		04B58F252259BE1500E0A1C3 /* AddRecipesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B58F242259BE1500E0A1C3 /* AddRecipesVC.swift */; };
@@ -26,7 +27,8 @@
 		0428C31F2259CD03007803FD /* RecipeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewCell.swift; sourceTree = "<group>"; };
 		0428C3202259CD03007803FD /* RecipeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeViewCell.xib; sourceTree = "<group>"; };
 		0428C3232259D773007803FD /* RecipesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesVC.swift; sourceTree = "<group>"; };
-		0431E6D6225F233E006D6093 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
+		04A483802260BB9B00A99CE6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		04A483822260E8C600A99CE6 /* ToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
 		04B58F2022592EC100E0A1C3 /* LoginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenVC.swift; sourceTree = "<group>"; };
 		04B58F222259354500E0A1C3 /* TabBarVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVc.swift; sourceTree = "<group>"; };
 		04B58F242259BE1500E0A1C3 /* AddRecipesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipesVC.swift; sourceTree = "<group>"; };
@@ -70,14 +72,15 @@
 			children = (
 				04E316D22251E0CC00C45BAF /* AppDelegate.swift */,
 				04B58F2022592EC100E0A1C3 /* LoginScreenVC.swift */,
+				04A483822260E8C600A99CE6 /* ToastViewController.swift */,
 				04B58F222259354500E0A1C3 /* TabBarVc.swift */,
 				04B58F242259BE1500E0A1C3 /* AddRecipesVC.swift */,
 				0428C3232259D773007803FD /* RecipesVC.swift */,
 				0428C31D2259CC24007803FD /* FavoriteRecipesVC.swift */,
 				0428C31F2259CD03007803FD /* RecipeViewCell.swift */,
 				04E316DC2251E0CF00C45BAF /* Assets.xcassets */,
-				0431E6D6225F233E006D6093 /* Main.storyboard */,
 				0428C3202259CD03007803FD /* RecipeViewCell.xib */,
+				04A483802260BB9B00A99CE6 /* Main.storyboard */,
 				04E316DE2251E0CF00C45BAF /* LaunchScreen.storyboard */,
 				04E316E12251E0CF00C45BAF /* Info.plist */,
 				04E316D92251E0CC00C45BAF /* CoreDataProject.xcdatamodeld */,
@@ -143,10 +146,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0431E6D7225F233E006D6093 /* Main.storyboard in Resources */,
 				04E316E02251E0CF00C45BAF /* LaunchScreen.storyboard in Resources */,
 				0428C3222259CD03007803FD /* RecipeViewCell.xib in Resources */,
 				04E316DD2251E0CF00C45BAF /* Assets.xcassets in Resources */,
+				04A483812260BB9B00A99CE6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +164,7 @@
 				0428C3212259CD03007803FD /* RecipeViewCell.swift in Sources */,
 				04B58F2122592EC100E0A1C3 /* LoginScreenVC.swift in Sources */,
 				04B58F252259BE1500E0A1C3 /* AddRecipesVC.swift in Sources */,
+				04A483832260E8C600A99CE6 /* ToastViewController.swift in Sources */,
 				04E316D32251E0CC00C45BAF /* AppDelegate.swift in Sources */,
 				0428C3242259D773007803FD /* RecipesVC.swift in Sources */,
 				0428C31E2259CC24007803FD /* FavoriteRecipesVC.swift in Sources */,

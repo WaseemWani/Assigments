@@ -8,31 +8,44 @@
 
 import UIKit
 
+
+protocol CredValidator {
+   func emailValidation() -> Bool
+    func passwordValidation() -> Bool
+}
+
+
 class LoginScreenVC: UIViewController {
 
     
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var emailTxtfield: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var toastLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+   
     @IBAction func loginBtnTapped() {
         
-          //credValidation(userNameTextField.text
-        if (credValidation(userNameTextField.text!, passwordTextField.text!) == false )  //   userNameTextField.text == ""
+        if ((emailTxtfield.text?.emailValidation())! && passwordTextField.text?.passwordValidation() == false )  //
             {
-            UIView.transition(with: userNameTextField, duration: 0.5, options: .transitionFlipFromBottom, animations: {}, completion: nil)
-                userNameTextField.text = ""
+            UIView.transition(with: emailTxtfield, duration: 0.5, options: .transitionFlipFromBottom, animations: {}, completion: nil)
+                emailTxtfield.text = ""
             UIView.transition(with: passwordTextField, duration: 0.5, options: .transitionFlipFromBottom, animations: {}, completion: nil)
                 passwordTextField.text = ""
-                //else if passwordTextField.text == "" {
+                
+                toastLabel.showToastMsg(message: "Please enter valid credentials")
+                
+        
         } else {
+    
+            UserDefaults.standard.set(true, forKey: "UserLoggedIn")
+            saveCredentials( state: UserDefaults.standard.bool(forKey: "UserLoggedIn"), id: emailTxtfield.text!)
             
-                 UserDefaults.standard.set(true, forKey: "userLogin")
                  addNewRecipe()
                  self.dismiss(animated: true, completion: nil)
             
@@ -44,25 +57,20 @@ class LoginScreenVC: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "TabBarVc") as? TabBarVc
         self.navigationController?.pushViewController(vc!, animated: true)
         }
-        
     
-    func credValidation(_ userName: String, _ password: String) -> Bool {
+    
+    // this function saves email id using Userdefaults
+    func saveCredentials(state: Bool, id: String) {
         
-        let nameRegx = "[A-Za-z]{2,}"
-        let matchesResult = NSPredicate(format: "SELF MATCHES %@", nameRegx)
-        let result = matchesResult.evaluate(with: userName)
-
-        let passwdRegx = "[A-Za-z]{1,}[0-9]{1,}[@#*&%]{1,}"
-        let matchResult = NSPredicate(format: "SELF MATCHES %@", passwdRegx)
-        let result2 = matchResult.evaluate(with: password)
-        if (result == false /*&& (password.count) < 6*/ && result2 == false ) {
-            return false
+        switch state {
+        case true:
+            UserDefaults.standard.set(id, forKey: "emailId")
         
-        } else {
-            return true
+        case false:
+             print( "unable to to login")
         }
     }
-
+    
     /*
     // MARK: - Navigation
 
@@ -73,9 +81,37 @@ class LoginScreenVC: UIViewController {
     }
     */
 }
-        //MARK: - Login Functionality
-        
-        //Don't ask for login credentials if user logged in last time
-        
 
+extension String : CredValidator {
+    
+    func  emailValidation() -> Bool {
+        
+        // email validation
+        let emailRegx = "[A-z0-9]{1,}@[A-z]{1,}[\\.][A-z]{2,}$"
+        let matchesResult = NSPredicate(format: "SELF MATCHES %@", emailRegx)
+        //let result =
+        if (matchesResult.evaluate(with: self) == true) {
+            return true
+                         //if result == true {
+        } else {
+            return false
+        }
+    }
+    
+    // password validation
+    func  passwordValidation() -> Bool  {
+        
+        let passwdRegx = "[A-Za-z]{1,}[0-9]{1,}[@#*&%]{1,}"
+        let matchResult = NSPredicate(format: "SELF MATCHES %@", passwdRegx)
+        let result2 = matchResult.evaluate(with: self)
+        
+        //below code lines return for valid password or false otherwise
+        if (self.count < 8 && result2 == false ) {
+            return false
+            
+        } else {
+            return true
+        }
+    }
+}
 
