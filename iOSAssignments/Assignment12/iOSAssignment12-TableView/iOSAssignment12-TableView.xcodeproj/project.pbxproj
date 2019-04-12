@@ -60,11 +60,11 @@
 			children = (
 				AA8BB586223668CB00F86BF9 /* AppDelegate.swift */,
 				AA8BB59822366A1E00F86BF9 /* ViewController.swift */,
+				AA6DAC712238EA7C0022158D /* recordViewCell.swift */,
 				AA8BB58A223668CB00F86BF9 /* Main.storyboard */,
 				AA8BB58D223668CC00F86BF9 /* Assets.xcassets */,
 				AA8BB58F223668CC00F86BF9 /* LaunchScreen.storyboard */,
 				AA8BB592223668CC00F86BF9 /* Info.plist */,
-				AA6DAC712238EA7C0022158D /* recordViewCell.swift */,
 				AA6DAC722238EA7C0022158D /* recordViewCell.xib */,
 			);
 			path = "iOSAssignment12-TableView";
@@ -98,7 +98,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Utkarsh Patel";
+				ORGANIZATIONNAME = TTN;
 				TargetAttributes = {
 					AA8BB582223668CB00F86BF9 = {
 						CreatedOnToolsVersion = 10.1;

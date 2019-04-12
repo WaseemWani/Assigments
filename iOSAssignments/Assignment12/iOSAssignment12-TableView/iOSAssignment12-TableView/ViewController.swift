@@ -14,7 +14,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let address: String
         let detail: String
     }
-
     var tableData = [Record]()
     
     @IBOutlet weak var image: UIImageView!
@@ -51,7 +50,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-
     @IBAction func onClickMore() {
        tableView.reloadData()
     }
@@ -66,7 +64,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
-
         
         let selectPic = UIAlertController(title: "Upload Photo", message: "Select the source", preferredStyle: .actionSheet)
         
@@ -130,10 +127,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let alert = UIAlertController(title: "Alert", message: "Detail field is empty! Enter the detail", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        }
         
-        else {
-            
+        } else {
             tableData.append(Record(profilePic: image.image!, name: nameTextField.text!, age: Int(ageTextField.text!)!, address: addressTextField.text!, detail: detailTextField.text!))
             //print(tableData)
             subView.isHidden = false
@@ -152,13 +147,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 150.0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
         return tableData.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recordCell") as! recordViewCell
@@ -173,7 +169,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
      }
         return cell
     }
-    
-
 }
 

@@ -2,8 +2,8 @@
 //  recordViewCell.swift
 //  iOSAssignment12-TableView
 //
-//  Created by Utkarsh Patel on 13/03/19.
-//  Copyright © 2019 Utkarsh Patel. All rights reserved.
+//  Created by Waseem Wani on 13/03/19.
+//  Copyright © 2019 TTN. All rights reserved.
 //
 
 import UIKit
