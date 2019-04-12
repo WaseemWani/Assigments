@@ -11,7 +11,7 @@
 		0428C3212259CD03007803FD /* RecipeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428C31F2259CD03007803FD /* RecipeViewCell.swift */; };
 		0428C3222259CD03007803FD /* RecipeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428C3202259CD03007803FD /* RecipeViewCell.xib */; };
 		0428C3242259D773007803FD /* RecipesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428C3232259D773007803FD /* RecipesVC.swift */; };
-		04B58F1F2258B74500E0A1C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B58F1E2258B74500E0A1C3 /* Main.storyboard */; };
+		0431E6D7225F233E006D6093 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0431E6D6225F233E006D6093 /* Main.storyboard */; };
 		04B58F2122592EC100E0A1C3 /* LoginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B58F2022592EC100E0A1C3 /* LoginScreenVC.swift */; };
 		04B58F232259354500E0A1C3 /* TabBarVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B58F222259354500E0A1C3 /* TabBarVc.swift */; };
 		04B58F252259BE1500E0A1C3 /* AddRecipesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B58F242259BE1500E0A1C3 /* AddRecipesVC.swift */; };
@@ -26,7 +26,7 @@
 		0428C31F2259CD03007803FD /* RecipeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewCell.swift; sourceTree = "<group>"; };
 		0428C3202259CD03007803FD /* RecipeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeViewCell.xib; sourceTree = "<group>"; };
 		0428C3232259D773007803FD /* RecipesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesVC.swift; sourceTree = "<group>"; };
-		04B58F1E2258B74500E0A1C3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
+		0431E6D6225F233E006D6093 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		04B58F2022592EC100E0A1C3 /* LoginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenVC.swift; sourceTree = "<group>"; };
 		04B58F222259354500E0A1C3 /* TabBarVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVc.swift; sourceTree = "<group>"; };
 		04B58F242259BE1500E0A1C3 /* AddRecipesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipesVC.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 				0428C31D2259CC24007803FD /* FavoriteRecipesVC.swift */,
 				0428C31F2259CD03007803FD /* RecipeViewCell.swift */,
 				04E316DC2251E0CF00C45BAF /* Assets.xcassets */,
-				04B58F1E2258B74500E0A1C3 /* Main.storyboard */,
+				0431E6D6225F233E006D6093 /* Main.storyboard */,
 				0428C3202259CD03007803FD /* RecipeViewCell.xib */,
 				04E316DE2251E0CF00C45BAF /* LaunchScreen.storyboard */,
 				04E316E12251E0CF00C45BAF /* Info.plist */,
@@ -143,7 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B58F1F2258B74500E0A1C3 /* Main.storyboard in Resources */,
+				0431E6D7225F233E006D6093 /* Main.storyboard in Resources */,
 				04E316E02251E0CF00C45BAF /* LaunchScreen.storyboard in Resources */,
 				0428C3222259CD03007803FD /* RecipeViewCell.xib in Resources */,
 				04E316DD2251E0CF00C45BAF /* Assets.xcassets in Resources */,

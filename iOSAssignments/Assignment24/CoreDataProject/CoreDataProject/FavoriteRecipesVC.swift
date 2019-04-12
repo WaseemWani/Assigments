@@ -20,11 +20,11 @@ class FavoriteRecipesVC: UIViewController, UITableViewDelegate, UITableViewDataS
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let context = appDelegate?.persistentContainer.viewContext
         let fetchRequest:NSFetchRequest = Recipe.fetchRequest()
-        //fetchRequest.predicate = NSPredicate(format: "favorite == 'true' ")
+        fetchRequest.predicate = NSPredicate(format: "favorite == true")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         let fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context!, sectionNameKeyPath: nil, cacheName: nil)
-        
-        fetchResultController.delegate = self as? NSFetchedResultsControllerDelegate
+//        fetchRequest.predicate = NSPredicate(format: "favorite == true")
+          fetchResultController.delegate = self as? NSFetchedResultsControllerDelegate
         
         try? fetchResultController.performFetch()
         return fetchResultController

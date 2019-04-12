@@ -22,21 +22,21 @@ class LoginScreenVC: UIViewController {
     
     @IBAction func loginBtnTapped() {
         
-        if userNameTextField.text == "" {
+          //credValidation(userNameTextField.text
+        if (credValidation(userNameTextField.text!, passwordTextField.text!) == false )  //   userNameTextField.text == ""
+            {
             UIView.transition(with: userNameTextField, duration: 0.5, options: .transitionFlipFromBottom, animations: {}, completion: nil)
-            
-        } else if passwordTextField.text == "" {
+                userNameTextField.text = ""
             UIView.transition(with: passwordTextField, duration: 0.5, options: .transitionFlipFromBottom, animations: {}, completion: nil)
-            
+                passwordTextField.text = ""
+                //else if passwordTextField.text == "" {
         } else {
-                addNewRecipe()
-            //UserDefaults.standard.set(true, forKey: "userLogin")
-            //self.dismiss(animated: true, completion: nil)
+            
+                 UserDefaults.standard.set(true, forKey: "userLogin")
+                 addNewRecipe()
+                 self.dismiss(animated: true, completion: nil)
             
         }
-        
-        
-        
     }
     
     func addNewRecipe() {
@@ -46,6 +46,22 @@ class LoginScreenVC: UIViewController {
         }
         
     
+    func credValidation(_ userName: String, _ password: String) -> Bool {
+        
+        let nameRegx = "[A-Za-z]{2,}"
+        let matchesResult = NSPredicate(format: "SELF MATCHES %@", nameRegx)
+        let result = matchesResult.evaluate(with: userName)
+
+        let passwdRegx = "[A-Za-z]{1,}[0-9]{1,}[@#*&%]{1,}"
+        let matchResult = NSPredicate(format: "SELF MATCHES %@", passwdRegx)
+        let result2 = matchResult.evaluate(with: password)
+        if (result == false /*&& (password.count) < 6*/ && result2 == false ) {
+            return false
+        
+        } else {
+            return true
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -12,11 +12,20 @@ class TabBarVc: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       //addNewRecipe()
+        
+        if(UserDefaults.standard.bool(forKey: "userLogin") == false) {
+            showLoginScreen()
+            
+        }
+        // else {
+//         addNewRecipe()
+//        }
         // Do any additional setup after loading the view.
     }
   
+    
     func showLoginScreen() {
+        
         let storyboardObj = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboardObj.instantiateViewController(withIdentifier: "LoginScreenVC") as? LoginScreenVC
         self.present(vc!, animated: true, completion: nil)
