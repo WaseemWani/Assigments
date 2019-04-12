@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  LocalizationApp
 //
-//  Created by Akash Verma on 09/04/19.
-//  Copyright © 2019 Akash Verma. All rights reserved.
+//  Created by Waseem Wani on 09/04/19.
+//  Copyright © 2019 Waseem Wani All rights reserved.
 //
 
 import UIKit
