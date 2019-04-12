@@ -13,7 +13,7 @@ class TabBarVc: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(UserDefaults.standard.bool(forKey: "UserLoggedIn") == false) {
+        if(UserDefaults.standard.bool(forKey: "userlogin") == false) {
             showLoginScreen()
             
         }
@@ -28,6 +28,7 @@ class TabBarVc: UITabBarController {
     }
     
     @IBAction func logout() {
+        UserDefaults.standard.removeObject(forKey: "userlogin")
         UserDefaults.standard.removeObject(forKey: "emailId")
         showLoginScreen()
     }

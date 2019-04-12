@@ -31,7 +31,10 @@ class LoginScreenVC: UIViewController {
    
     @IBAction func loginBtnTapped() {
         
-        if ((emailTxtfield.text?.emailValidation())! && passwordTextField.text?.passwordValidation() == false )  //
+        let isValidEmail = emailTxtfield.text?.emailValidation()
+        let isValidPassword = passwordTextField.text?.passwordValidation()
+        
+        if (isValidEmail == false || isValidPassword == false )  //
             {
             UIView.transition(with: emailTxtfield, duration: 0.5, options: .transitionFlipFromBottom, animations: {}, completion: nil)
                 emailTxtfield.text = ""
@@ -40,11 +43,10 @@ class LoginScreenVC: UIViewController {
                 
                 toastLabel.showToastMsg(message: "Please enter valid credentials")
                 
-        
         } else {
     
-            UserDefaults.standard.set(true, forKey: "UserLoggedIn")
-            saveCredentials( state: UserDefaults.standard.bool(forKey: "UserLoggedIn"), id: emailTxtfield.text!)
+            UserDefaults.standard.set(true, forKey: "userlogin")
+            saveCredentials( state: UserDefaults.standard.bool(forKey: "userlogin"), id: emailTxtfield.text!)
             
                  addNewRecipe()
                  self.dismiss(animated: true, completion: nil)
@@ -67,7 +69,7 @@ class LoginScreenVC: UIViewController {
             UserDefaults.standard.set(id, forKey: "emailId")
         
         case false:
-             print( "unable to to login")
+             print( "unable to login")
         }
     }
     
@@ -87,14 +89,22 @@ extension String : CredValidator {
     func  emailValidation() -> Bool {
         
         // email validation
+//        let emailRegx = "[A-Za-z0-9]{1,}@[A-Za-z0-9]{1,}[\\.][A-Za-z]{2,}$"
+//        let matchesResult = NSPredicate(format: "SELF MATCHES %@", emailRegx)
+//        //let result =
+//        if (matchesResult.evaluate(with: self) == true) {
+//            return true
+//                          //if result == true {
+//        } else {
+//            return false
+//        }
         let emailRegx = "[A-z0-9]{1,}@[A-z]{1,}[\\.][A-z]{2,}$"
-        let matchesResult = NSPredicate(format: "SELF MATCHES %@", emailRegx)
-        //let result =
-        if (matchesResult.evaluate(with: self) == true) {
-            return true
-                         //if result == true {
-        } else {
+        let matchResult = NSPredicate(format: "SELF MATCHES %@", emailRegx)
+        let result = matchResult.evaluate(with: self)
+        if result == false {
             return false
+        } else {
+            return true
         }
     }
     
@@ -105,7 +115,7 @@ extension String : CredValidator {
         let matchResult = NSPredicate(format: "SELF MATCHES %@", passwdRegx)
         let result2 = matchResult.evaluate(with: self)
         
-        //below code lines return for valid password or false otherwise
+        //below code lines return true for valid password or false otherwise
         if (self.count < 8 && result2 == false ) {
             return false
             

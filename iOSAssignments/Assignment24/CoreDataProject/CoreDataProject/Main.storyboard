@@ -292,6 +292,7 @@
                     <connections>
                         <outlet property="emailTxtfield" destination="rMp-Ue-cDY" id="jwC-N9-QN9"/>
                         <outlet property="passwordTextField" destination="BmL-1w-YZf" id="TKZ-ox-cLI"/>
+                        <outlet property="toastLabel" destination="t1p-U1-V6P" id="v5e-l3-zU5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkD-He-ujF" userLabel="First Responder" sceneMemberID="firstResponder"/>

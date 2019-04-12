@@ -58,11 +58,11 @@
                     <constraint firstAttribute="bottomMargin" secondItem="wdo-RH-82h" secondAttribute="bottom" constant="32" id="G7f-pP-COo"/>
                     <constraint firstItem="dZ1-De-mmv" firstAttribute="leading" secondItem="wdo-RH-82h" secondAttribute="trailing" constant="38" id="H8p-F2-Lim"/>
                     <constraint firstItem="b1c-PC-KKL" firstAttribute="leading" secondItem="wdo-RH-82h" secondAttribute="trailing" constant="22" id="Jj7-dB-SdK"/>
-                    <constraint firstItem="JlO-iI-QDt" firstAttribute="top" secondItem="dZ1-De-mmv" secondAttribute="bottom" constant="4" id="Xbb-wt-vrp"/>
-                    <constraint firstItem="fk1-9v-cGZ" firstAttribute="top" secondItem="JlO-iI-QDt" secondAttribute="bottom" constant="8" id="ZPV-us-MDZ"/>
+                    <constraint firstItem="JlO-iI-QDt" firstAttribute="top" secondItem="dZ1-De-mmv" secondAttribute="bottom" priority="250" constant="4" id="Xbb-wt-vrp"/>
+                    <constraint firstItem="fk1-9v-cGZ" firstAttribute="top" secondItem="JlO-iI-QDt" secondAttribute="bottom" priority="250" constant="8" id="ZPV-us-MDZ"/>
                     <constraint firstItem="JlO-iI-QDt" firstAttribute="leading" secondItem="wdo-RH-82h" secondAttribute="trailing" constant="30" id="dOv-bu-9m1"/>
                     <constraint firstItem="dZ1-De-mmv" firstAttribute="top" secondItem="b1c-PC-KKL" secondAttribute="bottom" constant="15.5" id="l0A-Im-iQU"/>
-                    <constraint firstItem="fk1-9v-cGZ" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="n55-Nj-liK"/>
+                    <constraint firstItem="fk1-9v-cGZ" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" priority="250" id="n55-Nj-liK"/>
                     <constraint firstItem="wdo-RH-82h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="47" id="rPZ-S4-1tF"/>
                 </constraints>
             </tableViewCellContentView>
@@ -73,7 +73,7 @@
                 <outlet property="recMadeByLabel" destination="fk1-9v-cGZ" id="1Jp-ol-BbZ"/>
                 <outlet property="recNameLabel" destination="b1c-PC-KKL" id="hC0-fX-oEv"/>
             </connections>
-            <point key="canvasLocation" x="103.7109375" y="72.254758418740849"/>
+            <point key="canvasLocation" x="102.40000000000001" y="71.514242878560722"/>
         </tableViewCell>
     </objects>
     <resources>
