@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Assignment_25_Mapkit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gLf-tt-IPA">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gLf-tt-IPA" secondAttribute="trailing" id="A4T-2Q-ol5"/>
+                            <constraint firstItem="gLf-tt-IPA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bg9-tA-ao8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gLf-tt-IPA" secondAttribute="bottom" id="ca3-qB-AUy"/>
+                            <constraint firstItem="gLf-tt-IPA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dAF-cJ-96D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="gLf-tt-IPA" id="OzR-lx-xtx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="131.78410794602701"/>
+        </scene>
+        <!--ImageVC-->
+        <scene sceneID="S9y-xH-1Pc">
+            <objects>
+                <viewController storyboardIdentifier="ImageVC" id="soR-iw-BvT" customClass="ImageVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zAP-SA-UEc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y4c-rN-NHb">
+                                <rect key="frame" x="52" y="251" width="216" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="6cd-vh-acJ"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tulip2" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-Am-Nh6">
+                                <rect key="frame" x="52" y="66" width="216" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="3pR-ua-v1R"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tMW-Am-Nh6" firstAttribute="leading" secondItem="Jtd-Wy-y14" secondAttribute="leading" constant="52" id="8ct-HP-NIE"/>
+                            <constraint firstItem="Jtd-Wy-y14" firstAttribute="trailing" secondItem="y4c-rN-NHb" secondAttribute="trailing" constant="52" id="GJv-FX-KWn"/>
+                            <constraint firstItem="Jtd-Wy-y14" firstAttribute="trailing" secondItem="tMW-Am-Nh6" secondAttribute="trailing" constant="52" id="SRv-ss-9IQ"/>
+                            <constraint firstItem="y4c-rN-NHb" firstAttribute="top" secondItem="tMW-Am-Nh6" secondAttribute="bottom" constant="10" id="STl-vc-OGD"/>
+                            <constraint firstItem="y4c-rN-NHb" firstAttribute="leading" secondItem="Jtd-Wy-y14" secondAttribute="leading" constant="52" id="TgU-87-wPm"/>
+                            <constraint firstItem="tMW-Am-Nh6" firstAttribute="top" secondItem="Jtd-Wy-y14" secondAttribute="top" constant="46" id="jWv-82-eOy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jtd-Wy-y14"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAK-0f-pmH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866.39999999999998" y="136.28185907046478"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tulip2" width="275" height="183"/>
+    </resources>
+</document>
