@@ -15,7 +15,6 @@ import MapKit
 
 class EmpDetailsVC: UIViewController, GetEmployeeID, CustomizedView {
     
-    
     @IBOutlet weak var detailsSubView: UIView!
     @IBOutlet weak var empProfile: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
@@ -33,74 +32,56 @@ class EmpDetailsVC: UIViewController, GetEmployeeID, CustomizedView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.layer.cornerRadius = 10
-        nameLabel.layer.borderWidth = 0.5
-        nameLabel.layer.borderColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
-        
-        agelabel.layer.cornerRadius = 10
-        agelabel.layer.borderWidth = 0.5
-        agelabel.layer.borderColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
-        
-        salaryLabel.layer.cornerRadius = 10
-        salaryLabel.layer.borderWidth = 0.5
-        salaryLabel.layer.borderColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
-        
-        idLabel.layer.cornerRadius = 10
-        idLabel.layer.borderWidth = 0.5
-        idLabel.layer.borderColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
-        
-        let url = "http://dummy.restapiexample.com/api/v1/employee/\(selectedEmpId)"
-       
-        DispatchQueue.global().async {
-            
-        ApiManager.sharedInstance.fetchEmployeesDataById(urlString: url) { (data, responseError) in
-            
-            if let err = responseError {
-                print(err.localizedDescription)
-                let alert  = UIAlertController(title: "Warning", message: err.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            
-            } else {
-                let employeeDetails = data as! EmployeesData
-                DispatchQueue.main.async {
-                    self.nameLabel.text = employeeDetails.employeeName
-                    self.idLabel.text = employeeDetails.id
-                    self.agelabel.text = employeeDetails.age
-                    self.salaryLabel.text = employeeDetails.salary
-                }
-            }
-
-        }
-    }
+        callEmpDetailsAPI()
         
         collectionView.delegate =  self
         collectionView.dataSource = self
-        
-        let nib =  UINib.init(nibName: "CollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "CollectionViewCell")
-    
         customizeView(collectionView)
         customizeView(empProfile)
-       // self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         detailsSubView.layer.cornerRadius = 10
         detailsSubView.layer.borderWidth = 2
         detailsSubView.layer.borderColor = #colorLiteral(red: 0, green: 0.5254901961, blue: 0.6784313725, alpha: 1)
+        
+        let nib =  UINib.init(nibName: "CollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "CollectionViewCell")
+        
+        //let url = "http://dummy.restapiexample.com/api/v1/employee/\(selectedEmpId)"
+    }
+    
+    func callEmpDetailsAPI() {
+        print("making api call in empDetailsVC")
+        NetwokManager.fetchData(urlRequest: RequestType<EmployeesData>.fetchEmpDetailsById(selectedEmpId)) {(result) in
+            
+            switch result {
+            case .sucess(let empDetails):
+                print(empDetails)
+                self.hideErrorView()
+                //self.employeeDetailsArray = empDetails
+                self.nameLabel.text = empDetails.employeeName
+                self.idLabel.text = empDetails.id
+                self.agelabel.text = empDetails.age
+                self.salaryLabel.text = empDetails.salary
+                
+            case .error(let error):
+//                let alert  = UIAlertController(title: "Warning", message: error.localizedDescription, preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                //self.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.hideErrorView()
+                    self.showErrorView(onView: self.view, error.localizedDescription)
+                }
+            }
+   }
+        
+   // self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.green
-        //roundView(empProfile)
-        //customizeView(detailsSubView) //0,194,199
         collectionView.layer.borderColor = UIColor.init(red: 0, green: 194, blue: 199, alpha: 0).cgColor
         // Do any additional setup after loading the view.
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        showEmployeeData()
-//    }
-//
     @IBAction func galleryButtonTapped(_ sender: Any) {
         collectionView.isHidden = false
         mapView.isHidden = true
-        
     }
     
     @IBAction func mapButtonTapped(_ sender: Any) {
@@ -125,6 +106,13 @@ class EmpDetailsVC: UIViewController, GetEmployeeID, CustomizedView {
 //    }
 //    }
 //}
+}
+
+extension EmpDetailsVC: ErrorViewProtocol {
+    
+    func refreshScreen() {
+        callEmpDetailsAPI()
+    }
 }
 
 extension EmpDetailsVC:  UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -204,6 +192,40 @@ extension EmpDetailsVC:  UIImagePickerControllerDelegate, UINavigationController
     }
 }
 
+
+//                if let err = responseError {
+//                print(err.localizedDescription)
+//                let alert  = UIAlertController(title: "Warning", message: err.localizedDescription, preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
+//
+//            } else {
+//                let employeeDetails = data as! EmployeesData
+//                print(employeeDetails)
+//                DispatchQueue.main.async {
+//                    self.nameLabel.text = employeeDetails.employeeName
+//                    self.idLabel.text = employeeDetails.id
+//                    self.agelabel.text = employeeDetails.age
+//                    self.salaryLabel.text = employeeDetails.salary
+//                }
+
+
+//        nameLabel.layer.cornerRadius = 10
+//        nameLabel.layer.borderWidth = 0.5
+//        nameLabel.layer.borderColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+//
+//        agelabel.layer.cornerRadius = 10
+//        agelabel.layer.borderWidth = 0.5
+//        agelabel.layer.borderColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+//
+//        salaryLabel.layer.cornerRadius = 10
+//        salaryLabel.layer.borderWidth = 0.5
+//        salaryLabel.layer.borderColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+//
+//        idLabel.layer.cornerRadius = 10
+//        idLabel.layer.borderWidth = 0.5
+//        idLabel.layer.borderColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+//
 
 //    @IBAction func segmentControlTapped(_ sender: Any) {
 //

@@ -30,7 +30,7 @@ extension CustomizedView {
     }
 }
 
-@IBDesignable
+//@IBDesignable
 class  CustomButton: UIButton {
     
 //    func customizeBtn() {

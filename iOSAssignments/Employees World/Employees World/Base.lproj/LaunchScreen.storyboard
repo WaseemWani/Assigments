@@ -1,52 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6qh-38-kpS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6qh-38-kpS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
-            <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employees World" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S22-sc-aeF">
-                                <rect key="frame" x="74" y="403" width="227" height="84"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="35"/>
-                                <color key="textColor" red="0.14725321150000001" green="0.73945114209999996" blue="0.0058511962340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="Lpd-9g-BRs">
-                                <rect key="frame" x="74" y="176" width="227" height="227"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="227" id="HdK-77-C0M"/>
-                                    <constraint firstAttribute="width" constant="227" id="K4B-JX-Hw3"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="S22-sc-aeF" firstAttribute="leading" secondItem="Lpd-9g-BRs" secondAttribute="leading" id="Ob2-bS-nMf"/>
-                            <constraint firstItem="Lpd-9g-BRs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="P3o-Id-6Od"/>
-                            <constraint firstItem="Lpd-9g-BRs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-44" id="Xek-GE-q5B"/>
-                            <constraint firstItem="S22-sc-aeF" firstAttribute="top" secondItem="Lpd-9g-BRs" secondAttribute="bottom" id="dpZ-dA-Kt4"/>
-                            <constraint firstItem="S22-sc-aeF" firstAttribute="trailing" secondItem="Lpd-9g-BRs" secondAttribute="trailing" id="fTc-79-V8Z"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="K2M-K3-O1d">
             <objects>
@@ -56,15 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="iT4-2P-Kkp">
-                                <rect key="frame" x="67.5" y="238" width="240" height="191"/>
+                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
                                 <color key="backgroundColor" red="0.14725321150000001" green="0.73945114209999996" blue="0.0058511962340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="191" id="nrv-Q4-Bbh"/>
+                                    <constraint firstAttribute="width" secondItem="iT4-2P-Kkp" secondAttribute="height" multiplier="1:1" id="SUL-Vl-NUB"/>
                                     <constraint firstAttribute="width" constant="240" id="r0o-Gg-XHZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employers World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5h-Zv-qCq">
-                                <rect key="frame" x="67.5" y="429" width="240" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employees World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5h-Zv-qCq">
+                                <rect key="frame" x="67.5" y="453.5" width="240" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jmq-Yx-k6k"/>

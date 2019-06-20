@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct EmployeesData: Decodable {
+struct EmployeesData: Codable {
     var id: String?
     var employeeName: String?
     var salary: String?
     var age: String?
-    var profile: String?
+    //var profile: String?
 // {"id":"13649","employee_name":"PPstit22","employee_salary":"12322","employee_age":"24","profile_image":""},
 }
 
@@ -23,7 +23,7 @@ extension EmployeesData {
         case employeeName = "employee_name"
         case salary = "employee_salary"
         case age = "employee_age"
-        case profile = "profile_image"
+        //case profile = "profile_image"
     }
     
 //    init(from decoder: Decoder) {

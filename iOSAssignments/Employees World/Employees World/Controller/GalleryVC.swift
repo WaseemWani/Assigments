@@ -22,7 +22,6 @@ class GalleryVC: UIViewController {
         collectionView.dataSource = self
         // Do any additional setup after loading the view.
     }
-
 }
 
 extension GalleryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CustomizedView {
@@ -32,7 +31,7 @@ extension GalleryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
         customizeView(cell)
         return cell
@@ -43,5 +42,4 @@ extension GalleryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
    //    let cellHeight = (collectionView.frame.height-30)
         return CGSize.init(width: cellWidth, height: cellWidth)
     }
-    
 }
