@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6qh-38-kpS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="K2M-K3-O1d">
+            <objects>
+                <viewController id="6qh-38-kpS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vpz-mX-8DX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="iT4-2P-Kkp">
+                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
+                                <color key="backgroundColor" red="0.14725321150000001" green="0.73945114209999996" blue="0.0058511962340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iT4-2P-Kkp" secondAttribute="height" multiplier="1:1" id="SUL-Vl-NUB"/>
+                                    <constraint firstAttribute="width" constant="240" id="r0o-Gg-XHZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employees World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5h-Zv-qCq">
+                                <rect key="frame" x="67.5" y="453.5" width="240" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jmq-Yx-k6k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="0.0" green="0.76078431372549016" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z5h-Zv-qCq" firstAttribute="leading" secondItem="iT4-2P-Kkp" secondAttribute="leading" id="GiE-Js-xZz"/>
+                            <constraint firstItem="iT4-2P-Kkp" firstAttribute="centerY" secondItem="Vpz-mX-8DX" secondAttribute="centerY" id="JS2-oI-4qN"/>
+                            <constraint firstItem="z5h-Zv-qCq" firstAttribute="top" secondItem="iT4-2P-Kkp" secondAttribute="bottom" id="QK0-e1-cCY"/>
+                            <constraint firstItem="z5h-Zv-qCq" firstAttribute="leading" secondItem="iT4-2P-Kkp" secondAttribute="leading" id="T40-NA-fuU"/>
+                            <constraint firstItem="iT4-2P-Kkp" firstAttribute="centerX" secondItem="Vpz-mX-8DX" secondAttribute="centerX" id="Trs-u0-3Ch"/>
+                            <constraint firstItem="z5h-Zv-qCq" firstAttribute="trailing" secondItem="iT4-2P-Kkp" secondAttribute="trailing" id="seS-1I-D68"/>
+                            <constraint firstItem="z5h-Zv-qCq" firstAttribute="trailing" secondItem="iT4-2P-Kkp" secondAttribute="trailing" id="xQ5-Gt-liI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xc4-pO-JX9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XpP-lT-jYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="361.16941529235385"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splash" width="1200" height="1200"/>
+    </resources>
+</document>
