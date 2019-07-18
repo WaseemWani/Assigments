@@ -17,6 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
+        
+//        if UserDefaults.standard.bool(forKey: "ShowOneTimeVC" ) == false || UserDefaults.standard.bool(forKey: "loggedIn") == false {
+//            self.window = UIWindow(frame: UIScreen.main.bounds)
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "OneTimeVC") as! OneTimeVC
+//            self.window?.rootViewController = initialViewController
+//            self.window?.makeKeyAndVisible()
+//        }
+        
+
+
         return true
     }
 
@@ -41,7 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
+        DBManager.sharedInstance.saveContext()
+            //self.saveContext()
     }
 
     // MARK: - Core Data stack
@@ -77,6 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func saveContext () {
         let context = persistentContainer.viewContext
+//        let appDBcontext = DBManager.sharedInstance.persistentContainer
         if context.hasChanges {
             do {
                 try context.save()

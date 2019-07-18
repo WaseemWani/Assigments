@@ -53,10 +53,6 @@ class NetwokManager {
         print(url)
         var request = URLRequest(url: url)
         request.httpMethod = urlRequest.requestMethod.rawValue
-        //request.addValue("multipart/form-data; boundary=CuriousWorld", forHTTPHeaderField: "Content-Type")
-        
-        //request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
         //var header = [String:String]()
         for (key, value) in urlRequest.header {
             //header[key] = value
@@ -64,7 +60,7 @@ class NetwokManager {
         }
         if urlRequest.requestMethod == .get {
             
-        }else if urlRequest.requestMethod == .post {
+        } else if urlRequest.requestMethod == .post {
             
             if let body = urlRequest.parameters as? Data {
                 request.httpBody = body
@@ -73,19 +69,20 @@ class NetwokManager {
                      request.httpBody = httpBody
             }
         }
-        let session = URLSession(configuration: .default)
+        
+        var session = URLSession(configuration: .default)
+        session = URLSession.shared
         
         let task = session.dataTask(with: request) {(data, response, responseError)  in
-            
             guard let responseData = data else {
                 
                 let res: Result<T> = .error(responseError!)
-                
                 print(response as Any)
                 //.error(ServiceError.customError("something went wrong")) ////responseError
                 completion(res)
                 return
             }
+//            print(String(data: responseData, encoding: .utf8))
             if let result = try? JSONDecoder().decode(urlRequest.resultType, from: responseData){
                 let res : Result<T> = .sucess(result)
                 DispatchQueue.main.async {
@@ -99,6 +96,7 @@ class NetwokManager {
         task.resume()
     }
 }
+
 
 //else {
 

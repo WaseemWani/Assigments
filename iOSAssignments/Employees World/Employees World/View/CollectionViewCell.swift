@@ -8,19 +8,24 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class CollectionViewCell: UICollectionViewCell, CustomizedView {
    
    // @IBOutlet weak var collectionViewcell: UICollectionView!
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageTitle: UILabel!
+    @IBOutlet weak var selectionLabel: UILabel!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-//        contentView.layer.cornerRadius = 10
-//        contentView.layer.borderWidth = 0.5
-//        contentView.layer.borderColor = UIColor.black.cgColor
-        // Initialization code
+        loader.startAnimating()
     }
-
+    
+    func showCellSeletectionLabel() {
+        selectionLabel.isHidden = false
+       
+    }
 }
 
 //extension CollectionViewCell {

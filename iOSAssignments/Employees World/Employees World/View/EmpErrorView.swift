@@ -10,17 +10,20 @@ import Foundation
 import UIKit
 
 protocol ErrorViewProtocol {
-    func showErrorView(onView superView: UIView, _ errDescription: String)
+    func showErrorView(onView superView: UIView, _ errDescription: String, _ image: UIImage, retryBtnText: String)
     func hideErrorView()
     func refreshScreen()
 }
 
 extension ErrorViewProtocol where Self : UIViewController  {
 
-    func showErrorView(onView superView: UIView, _ errDescription: String) {
+    func showErrorView(onView superView: UIView, _ errDescription: String, _ image: UIImage, retryBtnText: String) {
      let view = EmpErrorView.view()
          view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          view.errLabel.text = errDescription
+         view.imageView.image = image
+         view.retryButton.titleLabel?.text = retryBtnText
+         view.retryButton.setTitle(retryBtnText, for: .normal)
          view.tag = AppConstants.empErrorSubviewTag
          superView.addSubview(view)
          //let empListObj = EmpListVC()
