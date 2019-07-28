@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j1N-6A-XFw">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginVC" customModule="LoginSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiI-Bq-wSp">
+                                <rect key="frame" x="57" y="784" width="300" height="38"/>
+                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="WFO-eG-RhD"/>
+                                    <constraint firstAttribute="height" constant="38" id="Xla-I4-NF4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="fbLoginBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YOt-QG-xcD"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cT-B3-ic9">
+                                <rect key="frame" x="57" y="630" width="300" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L26-TC-9cS">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                        <state key="normal" title="Log in with Apple"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="L26-TC-9cS" firstAttribute="leading" secondItem="0cT-B3-ic9" secondAttribute="leading" id="0zk-mb-nV1"/>
+                                    <constraint firstAttribute="trailing" secondItem="L26-TC-9cS" secondAttribute="trailing" id="5oy-bQ-nOh"/>
+                                    <constraint firstAttribute="height" constant="38" id="9Lc-mG-K8y"/>
+                                    <constraint firstAttribute="bottom" secondItem="L26-TC-9cS" secondAttribute="bottom" id="BT2-me-kDG"/>
+                                    <constraint firstItem="L26-TC-9cS" firstAttribute="top" secondItem="0cT-B3-ic9" secondAttribute="top" id="Fb2-j0-iQW"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6B-dg-qAk">
+                                <rect key="frame" x="57" y="731" width="300" height="38"/>
+                                <color key="backgroundColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="rWa-Yc-rT0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Login with Twitter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="twitterLoginBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zvt-5i-02y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQo-d8-7XQ">
+                                <rect key="frame" x="57" y="678" width="300" height="38"/>
+                                <color key="backgroundColor" red="0.84705882352941175" green="0.29411764705882354" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="5iL-cf-H9j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Login with Google">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="googleLoginBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wNn-St-XdG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="0.95991967430000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mQo-d8-7XQ" firstAttribute="leading" secondItem="CiI-Bq-wSp" secondAttribute="leading" id="FmL-g2-WF8"/>
+                            <constraint firstItem="S6B-dg-qAk" firstAttribute="leading" secondItem="CiI-Bq-wSp" secondAttribute="leading" id="IFr-Yj-JrV"/>
+                            <constraint firstItem="S6B-dg-qAk" firstAttribute="trailing" secondItem="CiI-Bq-wSp" secondAttribute="trailing" id="KXO-dP-9cN"/>
+                            <constraint firstItem="CiI-Bq-wSp" firstAttribute="top" secondItem="S6B-dg-qAk" secondAttribute="bottom" constant="15" id="gXi-AL-XiO"/>
+                            <constraint firstItem="0cT-B3-ic9" firstAttribute="leading" secondItem="mQo-d8-7XQ" secondAttribute="leading" id="mwd-cT-iAf"/>
+                            <constraint firstItem="mQo-d8-7XQ" firstAttribute="top" secondItem="0cT-B3-ic9" secondAttribute="bottom" constant="10" id="oht-Vy-W8i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CiI-Bq-wSp" secondAttribute="bottom" constant="40" id="sGi-Aj-4YK"/>
+                            <constraint firstItem="mQo-d8-7XQ" firstAttribute="trailing" secondItem="CiI-Bq-wSp" secondAttribute="trailing" id="t0k-vE-7C9"/>
+                            <constraint firstItem="S6B-dg-qAk" firstAttribute="top" secondItem="mQo-d8-7XQ" secondAttribute="bottom" constant="15" id="tfU-3u-R1f"/>
+                            <constraint firstItem="0cT-B3-ic9" firstAttribute="trailing" secondItem="mQo-d8-7XQ" secondAttribute="trailing" id="tqI-ha-cIH"/>
+                            <constraint firstItem="CiI-Bq-wSp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yTM-aW-LyW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vjy-uw-3Ni"/>
+                    <connections>
+                        <outlet property="fbLoginBtn" destination="CiI-Bq-wSp" id="463-cD-ttH"/>
+                        <outlet property="googleLoginBtn" destination="mQo-d8-7XQ" id="1mL-td-7YO"/>
+                        <outlet property="twitterLoginBtn" destination="S6B-dg-qAk" id="XFH-bl-GER"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957.97101449275374" y="41.517857142857139"/>
+        </scene>
+        <!--ProfileVC-->
+        <scene sceneID="05k-pj-amI">
+            <objects>
+                <viewController storyboardIdentifier="ProfileVC" id="8DA-Bo-dGR" customClass="ProfileVC" customModule="LoginSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q6R-If-Qdy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnm-Tj-kRP">
+                                <rect key="frame" x="20" y="787" width="374" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutBtnTapped:" destination="8DA-Bo-dGR" eventType="touchUpInside" id="M1d-7t-tfj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gnm-Tj-kRP" firstAttribute="leading" secondItem="5FP-fw-bNf" secondAttribute="leading" constant="20" id="bEs-fu-iM4"/>
+                            <constraint firstItem="5FP-fw-bNf" firstAttribute="bottom" secondItem="Gnm-Tj-kRP" secondAttribute="bottom" constant="40" id="ff3-ro-647"/>
+                            <constraint firstItem="5FP-fw-bNf" firstAttribute="trailing" secondItem="Gnm-Tj-kRP" secondAttribute="trailing" constant="20" id="src-lQ-mu7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5FP-fw-bNf"/>
+                    </view>
+                    <connections>
+                        <outlet property="logoutBtn" destination="Gnm-Tj-kRP" id="EqM-5e-GWi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pim-ab-ba5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1686.9565217391305" y="41.517857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FjM-V5-u0e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j1N-6A-XFw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7GY-vo-MUC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="l28-Eb-wRT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rzl-jW-XMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136" y="42"/>
+        </scene>
+    </scenes>
+</document>
