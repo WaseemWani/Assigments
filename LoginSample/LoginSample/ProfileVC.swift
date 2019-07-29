@@ -14,6 +14,7 @@ import GoogleSignIn
 class ProfileVC: UIViewController {
 
     @IBOutlet weak var logoutBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         customizeView(view: logoutBtn, crnrRadius: 8, bdrWidth: 0.5, brdrClr: #colorLiteral(red: 0.231372549, green: 0.3490196078, blue: 0.5960784314, alpha: 0.8470588235), alphaValue: 1)
@@ -22,13 +23,17 @@ class ProfileVC: UIViewController {
     
     @IBAction func logoutBtnTapped(_ sender: Any) {
 //        logout from the appropraite platform
-          popVC()
-    }
+        let fbLogin = FBLogin()
+        fbLogin.logout()
+
+       // popVC()
+              }
     
     func popVC() {
         //let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
         self.navigationController?.popViewController(animated: true)
     }
+    
     /*
     // MARK: - Navigation
 

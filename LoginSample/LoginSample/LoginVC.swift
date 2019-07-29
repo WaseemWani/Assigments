@@ -5,7 +5,7 @@
 //  Created by Waseem Wani on 23/07/19.
 //  Copyright © 2019 Waseem Wani. All rights reserved.
 //
-//385128929327-d4sof06niqp4kohk1f06o9cb7mtpccro.apps.googleusercontent.com
+// 385128929327-d4sof06niqp4kohk1f06o9cb7mtpccro.apps.googleusercontent.com
 
 import UIKit
 import FacebookCore

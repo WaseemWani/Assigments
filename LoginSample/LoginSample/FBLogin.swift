@@ -21,14 +21,7 @@ protocol Loggable {
 class FBLogin: Loggable {
     
     
-//    func addProfileVc() {
-//
-//        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
-//        //self.navigationController?.pushViewController(vc, animated: true)
-//    }
-    
-    
+    // this function performs login functionality
     func login() {
         print("login")
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -72,6 +65,7 @@ class FBLogin: Loggable {
         print("get user details")
     }
     
+    // this function performs logout functionality
     func logout() {
         
         let manager = LoginManager()

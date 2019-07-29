@@ -28,13 +28,14 @@ class GoogleLogin: UIViewController, Loggable {
         print("")
     }
     
+    //  this function performs logout functionality
     func logout() {
         GIDSignIn.sharedInstance().signOut()
         let profileVC = ProfileVC()
         profileVC.popVC()
         //pop view controller after signing out
+        
     }
-
 }
 
 extension GoogleLogin: GIDSignInDelegate, GIDSignInUIDelegate {
@@ -53,4 +54,3 @@ extension GoogleLogin: GIDSignInDelegate, GIDSignInUIDelegate {
         }
     }
 }
-

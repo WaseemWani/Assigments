@@ -11,6 +11,7 @@ import TwitterKit
 
 class TWTRLogin: Loggable {
     
+    // this fucntion performs login functionality
     func login() {
         
         TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
@@ -33,6 +34,7 @@ class TWTRLogin: Loggable {
         print("get user details")
     }
     
+    // this fucntion performs logout fucntionality
     func logout() {
         
         let sessionStore = TWTRTwitter.sharedInstance().sessionStore
