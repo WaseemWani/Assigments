@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import FBSDKLoginKit
 import FacebookLogin
+
 protocol Loggable {
     
     func login()
@@ -30,7 +31,7 @@ class FBLogin: Loggable {
     
     // this function performs login functionality
     func login() {
-        print("login")
+//        print("login")
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         
@@ -61,16 +62,14 @@ class FBLogin: Loggable {
         }
     }
     
-    
     // this function performs logout functionality
     func logout() {
         
         let manager = LoginManager()
         manager.logOut()
         print("logged out from facebook")
-//
-//        let profileVC = ProfileVC()
-//        profileVC.popVC()
+        //        let profileVC = ProfileVC()
+        //        profileVC.popVC()
     }
 }
 

@@ -60,9 +60,9 @@ class LoginVC: UIViewController {
     //        return [fblogin, twtrLogin]
     //    }
     
-    func login(with param: LoginPlatform) {
+    func login(with platform: LoginPlatform) {
         
-        switch param {
+        switch platform {
         case .Facebook:
             loginObj = FBLogin()
             loginObj.login()
@@ -111,7 +111,6 @@ class LoginVC: UIViewController {
         //        }
         login(with: .Facebook)
         //        let fbLogin: Loggable = FBLogin()
-        //
         //        fbLogin.login()
         addProfileVc()
         

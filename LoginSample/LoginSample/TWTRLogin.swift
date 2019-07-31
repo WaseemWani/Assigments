@@ -14,7 +14,7 @@ class TWTRLogin: Loggable {
     // this will store the userdetails
     var userDetails: [String : Any] = [:]
     
-//    this will store the access token
+    //    this will store the access token
     var token: Any = 0
     
     // this fucntion performs login functionality
@@ -43,7 +43,7 @@ class TWTRLogin: Loggable {
         if let userID = sessionStore.session()?.userID {
             sessionStore.logOutUserID(userID)
         }
-//        let profileVC = ProfileVC()
-//        profileVC.popVC()
+        //        let profileVC = ProfileVC()
+        //        profileVC.popVC()
     }
 }

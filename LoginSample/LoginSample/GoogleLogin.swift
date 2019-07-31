@@ -28,8 +28,8 @@ class GoogleLogin: UIViewController, Loggable {
     //  this function performs logout functionality
     func logout() {
         GIDSignIn.sharedInstance().signOut()
-//        let profileVC = ProfileVC()
-//        profileVC.popVC()
+        //        let profileVC = ProfileVC()
+        //        profileVC.popVC()
         //pop view controller after signing out
     }
 }
@@ -41,9 +41,8 @@ extension GoogleLogin: GIDSignInDelegate, GIDSignInUIDelegate {
             print(error.localizedDescription)
             //print(error)
         } else {
-            //            var userDetails = [String : Any]()
-//            token = user.authentication.accessToken
-            
+            //  var userDetails = [String : Any]()m
+            token = user.authentication.accessToken
             self.userDetails["name"] = user.profile.givenName
             self.userDetails["email"] = user.profile.email
             self.userDetails["familyName"] = user.profile.familyName
