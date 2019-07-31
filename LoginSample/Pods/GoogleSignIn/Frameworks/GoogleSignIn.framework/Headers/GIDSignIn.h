@@ -96,6 +96,7 @@ typedef NS_ENUM(NSInteger, GIDSignInErrorCode) {
 // 4. Set up delegate method |signIn:didSignInForUser:withError:|.
 // 5. Call |handleURL| on the shared instance from |application:openUrl:...| in your app delegate.
 // 6. Call |signIn| on the shared instance;
+
 @interface GIDSignIn : NSObject
 
 // The authentication object for the current user, or |nil| if there is currently no logged in user.

@@ -11,6 +11,11 @@ import GoogleSignIn
 
 class GoogleLogin: UIViewController, Loggable {
     
+    // this will store the user details
+    var userDetails: [String : Any] = [:]
+    
+    // this will store the acces token
+    var token: Any = 0
     
     func login() {
         
@@ -20,21 +25,12 @@ class GoogleLogin: UIViewController, Loggable {
         GIDSignIn.sharedInstance().signIn()
     }
     
-    func getToken() {
-        print("")
-    }
-    
-    func getUserDetails() {
-        print("")
-    }
-    
     //  this function performs logout functionality
     func logout() {
         GIDSignIn.sharedInstance().signOut()
-        let profileVC = ProfileVC()
-        profileVC.popVC()
+//        let profileVC = ProfileVC()
+//        profileVC.popVC()
         //pop view controller after signing out
-        
     }
 }
 
@@ -45,12 +41,18 @@ extension GoogleLogin: GIDSignInDelegate, GIDSignInUIDelegate {
             print(error.localizedDescription)
             //print(error)
         } else {
+            //            var userDetails = [String : Any]()
+//            token = user.authentication.accessToken
+            
+            self.userDetails["name"] = user.profile.givenName
+            self.userDetails["email"] = user.profile.email
+            self.userDetails["familyName"] = user.profile.familyName
+            
+            let name = user.profile.name
             let userId = user.userID
-            let name = user.profile.givenName
             let email = user.profile.email
             let idToken = user.authentication.idToken
             print(name!,email!, userId!, idToken!)
-            // addProfileVc()
         }
     }
 }

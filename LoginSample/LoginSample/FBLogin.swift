@@ -5,21 +5,28 @@
 //  Created by Waseem Wani on 25/07/19.
 //  Copyright © 2019 Waseem Wani. All rights reserved.
 //
+
 import UIKit
 import Foundation
-//import FBSDKCoreKit
 import FBSDKLoginKit
-
+import FacebookLogin
 protocol Loggable {
+    
     func login()
-    func getToken()
-    func getUserDetails()
+    var token: Any { get set }
+    var userDetails: [String: Any] {get set}
     func logout()
 }
 
 
+
 class FBLogin: Loggable {
     
+    // this will store the user details
+    var userDetails: [String : Any] = [:]
+    
+    // this will store the access token
+    var token: Any = 0
     
     // this function performs login functionality
     func login() {
@@ -27,9 +34,8 @@ class FBLogin: Loggable {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         
-          if let token = AccessToken.current {
-//            let loginVC = LoginVC()
-//            loginVC.addProfileVc()
+        if let accessToken = AccessToken.current {
+            token = accessToken
             print(token)
         } else {
             let manager = LoginManager()
@@ -42,13 +48,11 @@ class FBLogin: Loggable {
                 case .cancelled:
                     print("cancelled logging in with facebook")
                 case .success(let permission,  let declinedPermissions, let accessToken):
-                    //vc.addProfileVc()
-                                        print(permission.map({$0.name}))
-                    //                    for elm in permission {
-                    //                        print(elm.name)
-                    //                    }
+                    print(permission.map({$0.name}))
+                    self.userDetails["name"] = permission.map({$0.name})
+                    self.token = accessToken
                     print("logged in successfully")
-                    print("\n accessToken: \(accessToken)")
+                    print("\n accessToken: \(self.token)")
                     print(" permission: \(permission)")
                     print(" declined permissions: \(declinedPermissions)")
                     break
@@ -57,22 +61,16 @@ class FBLogin: Loggable {
         }
     }
     
-    func getToken() {
-        print("get token here")
-    }
-    
-    func getUserDetails() {
-        print("get user details")
-    }
     
     // this function performs logout functionality
     func logout() {
         
         let manager = LoginManager()
         manager.logOut()
-        
-        let profileVC = ProfileVC()
-        profileVC.popVC()
+        print("logged out from facebook")
+//
+//        let profileVC = ProfileVC()
+//        profileVC.popVC()
     }
 }
 

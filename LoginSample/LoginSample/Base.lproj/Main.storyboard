@@ -40,6 +40,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                         <state key="normal" title="Log in with Apple"/>
+                                        <connections>
+                                            <action selector="appleLoginBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="diD-zW-w75"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,6 +102,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vjy-uw-3Ni"/>
                     <connections>
+                        <outlet property="appleLoginBtn" destination="L26-TC-9cS" id="s9J-qM-dLs"/>
                         <outlet property="fbLoginBtn" destination="CiI-Bq-wSp" id="463-cD-ttH"/>
                         <outlet property="googleLoginBtn" destination="mQo-d8-7XQ" id="1mL-td-7YO"/>
                         <outlet property="twitterLoginBtn" destination="S6B-dg-qAk" id="XFH-bl-GER"/>
@@ -119,7 +123,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnm-Tj-kRP">
                                 <rect key="frame" x="20" y="787" width="374" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="Log out">
                                     <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

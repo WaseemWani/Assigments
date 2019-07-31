@@ -11,27 +11,29 @@ import TwitterKit
 
 class TWTRLogin: Loggable {
     
+    // this will store the userdetails
+    var userDetails: [String : Any] = [:]
+    
+//    this will store the access token
+    var token: Any = 0
+    
     // this fucntion performs login functionality
     func login() {
         
         TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
             if let sess = session {
+                self.token = sess.authToken
+                self.userDetails["name"] = sess.userName
+                self.userDetails["userID"] = sess.userID
+                self.userDetails["authToken"] = sess.authToken
+                print(self.token)
                 print("signed in as \(sess.userName)")
-//                self.addProfileVc()
             } else {
                 print("error: \(error!.localizedDescription)")
                 print(error!)
             }
         })
-
-    }
-    
-    func getToken() {
-        print("get token here")
-    }
-    
-    func getUserDetails() {
-        print("get user details")
+        
     }
     
     // this fucntion performs logout fucntionality
@@ -41,8 +43,7 @@ class TWTRLogin: Loggable {
         if let userID = sessionStore.session()?.userID {
             sessionStore.logOutUserID(userID)
         }
-        
-        let profileVC = ProfileVC()
-        profileVC.popVC()
+//        let profileVC = ProfileVC()
+//        profileVC.popVC()
     }
 }
