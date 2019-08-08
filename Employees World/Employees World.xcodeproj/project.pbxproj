@@ -37,6 +37,8 @@
 		8DAD20CE22C2336D005CA28E /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD20CD22C2336D005CA28E /* ImageVC.swift */; };
 		8DFC2D7A22A10081003535C2 /* DatabaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC2D7922A10081003535C2 /* DatabaseVC.swift */; };
 		8DFC7B6822B791E000C11C36 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC7B6722B791E000C11C36 /* SignupVC.swift */; };
+		8DFD4BCF22F81063006BC63C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD4BCD22F81062006BC63C /* Fabric.framework */; };
+		8DFD4BD022F81063006BC63C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD4BCE22F81063006BC63C /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		8DAD20CD22C2336D005CA28E /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		8DFC2D7922A10081003535C2 /* DatabaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseVC.swift; sourceTree = "<group>"; };
 		8DFC7B6722B791E000C11C36 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		8DFD4BCD22F81062006BC63C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		8DFD4BCE22F81063006BC63C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DFD4BD022F81063006BC63C /* Crashlytics.framework in Frameworks */,
+				8DFD4BCF22F81063006BC63C /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +115,8 @@
 				04B3D74122704E1300DCF69A /* Controllers */,
 				04B3D74022704E0700DCF69A /* Views */,
 				044FDB49226995A10098C559 /* Assets.xcassets */,
+				8DFD4BCE22F81063006BC63C /* Crashlytics.framework */,
+				8DFD4BCD22F81062006BC63C /* Fabric.framework */,
 				044FDB4E226995A10098C559 /* Info.plist */,
 				044FDB462269959F0098C559 /* Employees_World.xcdatamodeld */,
 			);
@@ -189,6 +197,7 @@
 				044FDB382269959F0098C559 /* Sources */,
 				044FDB392269959F0098C559 /* Frameworks */,
 				044FDB3A2269959F0098C559 /* Resources */,
+				8DFD4BCC22F80F47006BC63C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -248,6 +257,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8DFD4BCC22F80F47006BC63C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 0a83081cf9414a0fd0ffec5772b880a9dc007953 3a605ea7788c9a352965f849572fa95a2bbdcda8cf6697427c85acdbe48689b6\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		044FDB382269959F0098C559 /* Sources */ = {
@@ -426,16 +455,20 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LLUABLMXF3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Employees World/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.learn.login.Employees-World";
+				PRODUCT_BUNDLE_IDENTIFIER = com.milq.redsox.beta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "RedSox Beta Developement";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -449,16 +482,20 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LLUABLMXF3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Employees World/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.learn.login.Employees-World";
+				PRODUCT_BUNDLE_IDENTIFIER = com.milq.redsox.beta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "RedSox Beta Developement";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
