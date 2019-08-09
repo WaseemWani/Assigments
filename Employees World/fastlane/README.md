@@ -36,6 +36,16 @@ fastlane ios gitclean
 fastlane ios printOut
 ```
 
+### ios log
+```
+fastlane ios log
+```
+
+### ios readWrite
+```
+fastlane ios readWrite
+```
+
 
 ----
 
