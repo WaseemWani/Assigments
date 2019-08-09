@@ -8,8 +8,7 @@
 
 import Foundation
 
-
-
+// model for getting user details getting logged in
 struct LoginResponse: Codable {
     let userStatus: UserStatus
     var userData: UserData?
@@ -19,6 +18,7 @@ struct LoginResponse: Codable {
         case userData = "data"
     }
     
+     // custom parsing
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         userStatus = try values.decode(UserStatus.self, forKey: .userStatus)
@@ -27,8 +27,6 @@ struct LoginResponse: Codable {
         if userData == nil {
             //userData = UserData(firstName: nil, lastName: nil, subscriptionStatus: nil, userID: nil)
         }
-        
-        
     }
 }
 

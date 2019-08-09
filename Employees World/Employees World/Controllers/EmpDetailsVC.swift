@@ -116,6 +116,7 @@ class EmpDetailsVC: UIViewController, GetEmployeeID, CustomizedView {
         print(id)
     }
     
+    // this button action will enable user to add annotations on the map
     @IBAction func addAnnotationBtnTapped(_ sender: Any) {
         let vc  = storyboard?.instantiateViewController(withIdentifier: "MapVC") as! MapVC
         vc.willDropAnnotations = true

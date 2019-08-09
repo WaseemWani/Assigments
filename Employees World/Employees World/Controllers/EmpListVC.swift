@@ -59,7 +59,6 @@ extension EmpListVC : ErrorViewProtocol {
 }
 
 // extension of class Emplist. Here necessary delegates, to populate tableview with data, are implemented
-
 extension EmpListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
