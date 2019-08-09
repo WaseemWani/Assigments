@@ -19,8 +19,16 @@ platform :ios do
   desc "Description of what the lane does"
   
 lane :beta do
+  
+  File.open('hashfile','r') do |file|
+  oldHash = file.read()
+  
   commit = last_git_commit
   hash = commit[:commit_hash]
+  
+  commitMessages = changelog_from_git_commits(
+   between: [oldHash,hash])
+
   File.open('hashfile','w') do |file|
   file.write(hash)
 
@@ -30,50 +38,9 @@ lane :beta do
 	    clean: true,        
             export_method: "development",
             include_bitcode: true)
-crashlytics(api_token:"0a83081cf9414a0fd0ffec5772b880a9dc007953",build_secret:"3a605ea7788c9a352965f849572fa95a2bbdcda8cf6697427c85acdbe48689b6", notes: commit[:message],emails: "waseem.ahmed@tothenew.com, ankit.nigam@tothenew.com")
+crashlytics(api_token:"0a83081cf9414a0fd0ffec5772b880a9dc007953",build_secret:"3a605ea7788c9a352965f849572fa95a2bbdcda8cf6697427c85acdbe48689b6", notes: commitMessages,emails: "waseem.ahmed@tothenew.com, ankit.nigam@tothenew.com")
 end
 end
-
-
-lane :lastcommit do
-commit = last_git_commit
-author = commit[:author]
-message = commit[:message]
-hash = commit[:commit_hash]
-shortHash = commit[:abbreviated_commit_hash]
-author_email = commit[:author_email]
-
-File.open('hashfile','w') do |file|
-file.write(hash)
-
-puts author_email
-puts message
-puts hash
-puts shortHash
-end 
 end
 
-lane :gitclean do
-ensure_git_status_clean
-end
-
-lane :printOut do
-# slack(message: “Application was built and successfully uploaded to crashlytics”)
-commit = number_of_commits
-lastcommit
-puts commit
-puts message
-end
-
-lane :log do
-changelog_from_git_commits(
- between: ["a62caecda7f69fded14b665f324ee57c0d58930f", "a1d92228d8e5bc639de0f3ba9eea2c2e3c8fc8ae"])
-end
-
-lane :readWrite do
-File.open('hashfile','r') do |file|
-# text = ''
-text = file.read()
-end
-end
 end
