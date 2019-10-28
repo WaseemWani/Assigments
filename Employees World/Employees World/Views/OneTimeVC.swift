@@ -15,7 +15,7 @@ class OneTimeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customizeView(view: continueBtn, crnrRadius: 12, bdrWidth: 0, brdrClr: .white, alphaValue: 1)
+        customizeView(view: continueBtn, crnrRadius: 12, bdrWidth: 0, brdrColor: .white )
         // Do any additional setup after loading the view.
     }
     

@@ -1,0 +1,66 @@
+{
+    "data": [{
+        "placeHolder": "First Name",
+        "identifier": "LATextFieldCell",
+        "inputType": "AN",
+        "isRequired": true,
+        "isEditable": true,
+        "isValid" : true,
+        "textFieldType" : "firstName",
+        "validations": {
+                      "errorMessage": "Invalid first name",
+                      "validationRegex": "",
+                      "min": 0,
+                      "max": 0
+                  },
+        "arabicPlaceholder": "الاسم الأول"
+
+    }, {
+        "placeHolder": "Last Name",
+        "arabicPlaceholder": "اسم العائلة",
+        "identifier": "LATextFieldCell",
+        "inputType": "AN",
+        "isRequired": true,
+        "isEditable": true,
+        "isValid" : true,
+        "textFieldType": "lastName",
+        "validations": {
+            "errorMessage": "Invalid last name",
+            "validationRegex": "",
+            "min": 0,
+            "max": 0
+        }
+    }, {
+        "placeHolder": "Email Address",
+        "arabicPlaceholder": "عنوان البريد الإلكتروني",
+        "identifier": "LATextFieldCell",
+        "inputType": "EM",
+        "isRequired": true,
+        "isEditable": true,
+        "isValid" : true,
+        "textFieldType": "email ",
+        "validations": {
+            "errorMessage": "Invalid email",
+            "validationRegex": "",
+            "min": 0,
+            "max": 0
+        }
+    },{
+        "placeHolder": "Date of Birth (dd/mm/yyyy)",
+        "identifier": "LATextFieldCell",
+        "arabicPlaceholder": "تاريخ الميلاد",
+        "inputType": "M",
+        "isRequired": true,
+        "isEditable": true,
+        "isValid" : true,
+        "rightImage": "DateImage",
+        "textFieldType": "dateOfBirth",
+        "validations": {
+            "errorMessage": "Invalid date of birth(21 above)",
+            "validationRegex": "",
+            "min": 0,
+            "max": 0
+        }
+    }]
+}
+     

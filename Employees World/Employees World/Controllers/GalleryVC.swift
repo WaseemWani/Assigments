@@ -36,7 +36,7 @@ class GalleryVC: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customizeView(view: loadMoreBtn, crnrRadius: 10, bdrWidth: 0, brdrClr: .white, alphaValue: 0.7)
+        customizeView(view: loadMoreBtn, crnrRadius: 10, bdrWidth: 0, brdrColor: .white)
         //DBManager.sharedInstance.deleteData(modelType: CoreDataModelType<Gallery>.selectedImages)
         print(UserDefaults.standard.bool(forKey: "isloggedIn"))
         let nib = UINib.init(nibName: "CollectionViewCell", bundle: nil)
@@ -173,7 +173,7 @@ extension GalleryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             if isSelectionBtnPressed {
                 cell.selectionLabel.isHidden = false
                 cell.selectionLabel.text = ""
-                roundView(cell.selectionLabel, 0.5, .darkGray)
+                roundView(cell.selectionLabel)
             } else if !isSelectionBtnPressed {
                 cell.selectionLabel.isHidden = true
             }

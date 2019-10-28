@@ -24,7 +24,7 @@ class SignupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loader.isHidden = true
-        customizeView(view: signUpBtn, crnrRadius: 4, bdrWidth: 2, brdrClr: .black)
+        customizeView(view: signUpBtn, crnrRadius: 4, bdrWidth: 2, brdrColor: .black)
     }
     
     @IBAction func signupBtnTapped(_ sender: Any) {

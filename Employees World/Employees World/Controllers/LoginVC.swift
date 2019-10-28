@@ -45,8 +45,8 @@ class LoginVC: UIViewController {
         if UserDefaults.standard.bool(forKey: "loggedIn") == false {
             loader.isHidden = true
             resetPswdViewLoader.isHidden = true
-            customizeView(view: loginBtn, crnrRadius: 4, bdrWidth: 2, brdrClr: .black)
-            customizeView(view: signupBtn, crnrRadius: 15, bdrWidth: 1.3, brdrClr: .black)
+            customizeView(view: loginBtn, crnrRadius: 4, bdrWidth: 2, brdrColor: .black)
+            customizeView(view: signupBtn, crnrRadius: 15, bdrWidth: 1.3, brdrColor: .black)
         }
     }
     
@@ -61,7 +61,7 @@ class LoginVC: UIViewController {
     @IBAction func showForgetPasswordView(_ sender: Any) {
         loginView.isHidden = true
         resetPswdView.isHidden = false
-        customizeView(view: resetPswdBtn, crnrRadius: 4, bdrWidth: 2, brdrClr: .black)
+        customizeView(view: resetPswdBtn, crnrRadius: 4, bdrWidth: 2, brdrColor: .black)
     }
     
     @IBAction func loginBtntapped(_ sender: Any) {

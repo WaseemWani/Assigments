@@ -34,7 +34,7 @@ class EmpDetailsVC: UIViewController, GetEmployeeID, CustomizedView {
         addMapView()
         print(UserDefaults.standard.bool(forKey: "isloggedIn"))
         customizeView(view: empProfile)
-        customizeView(view: detailsSubView, crnrRadius: 0, bdrWidth: 0, brdrClr: .lightGray, alphaValue: 1)
+        customizeView(view: detailsSubView, crnrRadius: 0, bdrWidth: 0, brdrColor: .lightGray)
         //customizeView(view: bottomView, crnrRadius: 12, bdrWidth: 1, brdrClr: .black)
         //detailsSubView.layer.cornerRadius = 10
         //detailsSubView.layer.borderWidth = 2
@@ -233,7 +233,7 @@ extension EmpDetailsVC:  UICollectionViewDataSource, UICollectionViewDelegate, U
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         if images.count > 0 {
-            customizeView(view: cell, crnrRadius: 5, bdrWidth: 0, brdrClr: .white)
+            customizeView(view: cell, crnrRadius: 5, bdrWidth: 0, brdrColor: .white)
             cell.imageView.image = images[indexPath.row]
             return cell
         } else {

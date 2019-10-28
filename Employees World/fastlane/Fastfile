@@ -16,7 +16,7 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
+  desc "Description of what the lane does - deploy app to carshlytics with commit messages of commits between last build release and current build release between last and invite testers for app testing"
   
 lane :beta do
   

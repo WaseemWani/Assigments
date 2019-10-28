@@ -19,7 +19,7 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showUserDetails()
-        customizeView(view: logutBtn, crnrRadius: 15, bdrWidth: 1, brdrClr: .black)
+        customizeView(view: logutBtn, crnrRadius: 15, bdrWidth: 1, brdrColor: .black)
         // Do any additional setup after loading the view.
     }
     

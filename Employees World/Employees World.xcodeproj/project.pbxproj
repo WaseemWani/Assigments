@@ -27,7 +27,6 @@
 		8D09BB7722B3991C005C7A40 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09BB7622B3991C005C7A40 /* LoginResponse.swift */; };
 		8D0DA40E22CA192C0073583E /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0DA40D22CA192C0073583E /* MapVC.swift */; };
 		8D26C5FB22C92FA300011992 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D26C5FA22C92FA300011992 /* ProfileVC.swift */; };
-		8D2E610B22BBA6CC004BCFF1 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2E610A22BBA6CB004BCFF1 /* CustomView.swift */; };
 		8D2E610D22BCAD88004BCFF1 /* GoogleImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2E610C22BCAD88004BCFF1 /* GoogleImages.swift */; };
 		8D56CB442297EEAE005DA4EF /* APIconfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56CB432297EEAE005DA4EF /* APIconfig.swift */; };
 		8D56CB46229D2CB6005DA4EF /* EmpErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D56CB45229D2CB6005DA4EF /* EmpErrorView.xib */; };
@@ -35,6 +34,7 @@
 		8D56CB4A229FE144005DA4EF /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56CB49229FE144005DA4EF /* AppConstants.swift */; };
 		8D7950FC22E335AF00F8E445 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7950FB22E335AF00F8E445 /* Toast.swift */; };
 		8DAD20CE22C2336D005CA28E /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD20CD22C2336D005CA28E /* ImageVC.swift */; };
+		8DD124E3232383E200172D72 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD124E2232383E200172D72 /* CustomView.swift */; };
 		8DFC2D7A22A10081003535C2 /* DatabaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC2D7922A10081003535C2 /* DatabaseVC.swift */; };
 		8DFC7B6822B791E000C11C36 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC7B6722B791E000C11C36 /* SignupVC.swift */; };
 		8DFD4BCF22F81063006BC63C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD4BCD22F81062006BC63C /* Fabric.framework */; };
@@ -64,7 +64,6 @@
 		8D09BB7622B3991C005C7A40 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		8D0DA40D22CA192C0073583E /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		8D26C5FA22C92FA300011992 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		8D2E610A22BBA6CB004BCFF1 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomView.swift; path = ../../../../.Trash/CustomView.swift; sourceTree = "<group>"; };
 		8D2E610C22BCAD88004BCFF1 /* GoogleImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleImages.swift; sourceTree = "<group>"; };
 		8D56CB432297EEAE005DA4EF /* APIconfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIconfig.swift; sourceTree = "<group>"; };
 		8D56CB45229D2CB6005DA4EF /* EmpErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmpErrorView.xib; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		8D56CB49229FE144005DA4EF /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		8D7950FB22E335AF00F8E445 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		8DAD20CD22C2336D005CA28E /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
+		8DD124E2232383E200172D72 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		8DFC2D7922A10081003535C2 /* DatabaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseVC.swift; sourceTree = "<group>"; };
 		8DFC7B6722B791E000C11C36 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		8DFD4BCD22F81062006BC63C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
@@ -129,7 +129,7 @@
 				044FDB54226AEFA00098C559 /* OneTimeVC.swift */,
 				044FDB56226D8EF70098C559 /* EmpTableViewCell.swift */,
 				04B3D73C22704DFB00DCF69A /* CollectionViewCell.swift */,
-				8D2E610A22BBA6CB004BCFF1 /* CustomView.swift */,
+				8DD124E2232383E200172D72 /* CustomView.swift */,
 				8D56CB47229D3260005DA4EF /* EmpErrorView.swift */,
 				8D56CB49229FE144005DA4EF /* AppConstants.swift */,
 				044FDB4B226995A10098C559 /* LaunchScreen.storyboard */,
@@ -291,8 +291,8 @@
 				04D88814227872E6007AD498 /* LoginVC.swift in Sources */,
 				044FDB55226AEFA00098C559 /* OneTimeVC.swift in Sources */,
 				8D2E610D22BCAD88004BCFF1 /* GoogleImages.swift in Sources */,
-				8D2E610B22BBA6CC004BCFF1 /* CustomView.swift in Sources */,
 				8D0DA40E22CA192C0073583E /* MapVC.swift in Sources */,
+				8DD124E3232383E200172D72 /* CustomView.swift in Sources */,
 				044FDB5D226DA98F0098C559 /* EmpDetailsVC.swift in Sources */,
 				04D8881122776B3A007AD498 /* NetworkManager.swift in Sources */,
 				8D56CB442297EEAE005DA4EF /* APIconfig.swift in Sources */,

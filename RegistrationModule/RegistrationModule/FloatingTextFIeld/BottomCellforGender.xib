@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BottomCellforGender" rowHeight="114" id="KGk-i7-Jjw" customClass="BottomCellforGender" customModule="RegistrationModule" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="373" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0W-vF-Hhl">
+                        <rect key="frame" x="36" y="21" width="45.5" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="270-p2-1Ij"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRr-hf-Pe9">
+                        <rect key="frame" x="17" y="48" width="161" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="161" id="EBI-aL-B9T"/>
+                            <constraint firstAttribute="height" constant="44" id="c7L-90-DNv"/>
+                        </constraints>
+                        <state key="normal" title="MALE">
+                            <color key="titleColor" systemColor="systemGrayColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="maleButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zXl-5J-5ZP"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deq-Fw-gqS">
+                        <rect key="frame" x="186" y="48" width="161" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="161" id="HOA-Nq-Er8"/>
+                        </constraints>
+                        <state key="normal" title="FEMALE">
+                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="femaleButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9xO-SB-Dkc"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="oRr-hf-Pe9" secondAttribute="bottom" constant="18" id="4gy-GK-pJd"/>
+                    <constraint firstItem="oRr-hf-Pe9" firstAttribute="top" secondItem="N0W-vF-Hhl" secondAttribute="bottom" constant="14" id="Bcf-uj-v96"/>
+                    <constraint firstAttribute="trailing" secondItem="deq-Fw-gqS" secondAttribute="trailing" constant="8" id="DLI-jM-5aZ"/>
+                    <constraint firstItem="oRr-hf-Pe9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="NFp-zr-Vc7"/>
+                    <constraint firstItem="N0W-vF-Hhl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="PKT-Pk-jeB"/>
+                    <constraint firstItem="N0W-vF-Hhl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="g76-sC-wcW"/>
+                    <constraint firstItem="oRr-hf-Pe9" firstAttribute="bottom" secondItem="deq-Fw-gqS" secondAttribute="bottom" id="kX9-IP-aF6"/>
+                    <constraint firstItem="oRr-hf-Pe9" firstAttribute="width" secondItem="deq-Fw-gqS" secondAttribute="width" id="onl-Yh-zXM"/>
+                    <constraint firstItem="deq-Fw-gqS" firstAttribute="leading" secondItem="oRr-hf-Pe9" secondAttribute="trailing" constant="8" id="qlw-4w-7q1"/>
+                    <constraint firstItem="deq-Fw-gqS" firstAttribute="top" secondItem="oRr-hf-Pe9" secondAttribute="top" id="vSs-bs-nny"/>
+                    <constraint firstItem="oRr-hf-Pe9" firstAttribute="height" secondItem="deq-Fw-gqS" secondAttribute="height" id="z0x-gX-g1q"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="IamLabel" destination="N0W-vF-Hhl" id="r2J-km-CQi"/>
+                <outlet property="femaleButton" destination="deq-Fw-gqS" id="mzb-oh-xuX"/>
+                <outlet property="maleButton" destination="oRr-hf-Pe9" id="hhW-uw-QER"/>
+            </connections>
+            <point key="canvasLocation" x="176.08695652173915" y="111.16071428571428"/>
+        </tableViewCell>
+    </objects>
+</document>
