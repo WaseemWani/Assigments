@@ -36,7 +36,6 @@ struct Theme: Equatable {
     let navbarStyle: UIBarStyle
     let buttonBackGroundColor: UIColor
     let switchTintColor: UIColor
-    let someColor: UIColor
 
     init(type: ThemeType, colors: ColorPalette) {
         self.type = type
@@ -49,10 +48,31 @@ struct Theme: Equatable {
         self.navbarStyle = type == .dark ? .black : .default
         self.switchTintColor = colors.tint
         self.buttonBackGroundColor = colors.buttonBackGroundColor
-        self.someColor = colors.myColor
     }
 
     public static func == (lhs: Theme, rhs: Theme) -> Bool {
         return lhs.type == rhs.type
     }
+    
 }
+
+//@propertyWrapper struct DColor {
+//    private var dark: UIColor
+//    private var light: UIColor
+////    var theme: Theme
+//
+//    var wrappedValue: UIColor {
+//        if #available(iOS 13, *) {
+//            switch UITraitCollection.current.userInterfaceStyle {
+//            case .dark:
+//                return dark
+//            case .light,.unspecified:
+//                return light
+//            @unknown default:
+//                fatalError()
+//            }
+//        } else {
+//            return light
+//            }
+//        }
+//    }

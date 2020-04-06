@@ -12,58 +12,45 @@ import UIKit
 struct ColorPalette {
     let foreground: UIColor
     let background: UIColor
-    let secondaryBackground: UIColor
-    let primary: UIColor
-    let secondary: UIColor
-    let complementary: UIColor
-    let tint: UIColor
+    @DynamicColor var secondaryBackground: UIColor
+    @DynamicColor var primary: UIColor
+    @DynamicColor var secondary: UIColor
+    @DynamicColor var complementary: UIColor
+    @DynamicColor var tint: UIColor
     let buttonBackGroundColor: UIColor
-    @DynamicColor var myColor: UIColor
 
     static let light: ColorPalette = .init(
         foreground: .black,
         background: .white,
-        secondaryBackground: .groupTableViewBackground,
-        primary: UIColor(hue: 0.635, saturation: 0.101, brightness: 0.2, alpha: 1),
-        secondary: UIColor(white: 0.4, alpha: 1.0),
-        complementary: UIColor(white: 0.35, alpha: 1.0),
-        tint: UIColor(hue:0.620, saturation:0.75, brightness:1.0, alpha:1),
-        buttonBackGroundColor: .red, myColor: .init(light: .black, dark: .green) //UIColor(red: 255, green: 59, blue: 48, alpha: 1)
-        
+        secondaryBackground: .init(light: .groupTableViewBackground, dark: .groupTableViewBackground) ,
+        primary: .init(light: UIColor(hue: 0.635, saturation: 0.101, brightness: 0.2, alpha: 1), dark: UIColor(hue: 0.635, saturation: 0.101, brightness: 0.2, alpha: 1)),
+        secondary: .init(light: UIColor(white: 0.4, alpha: 1.0), dark: UIColor(white: 0.4, alpha: 1.0)),
+        complementary: .init(light: UIColor(white: 0.35, alpha: 1.0), dark: UIColor(white: 0.35, alpha: 1.0)),
+        tint: .init(light: UIColor(hue:0.620, saturation:0.75, brightness:1.0, alpha:1), dark: UIColor(hue:0.620, saturation:0.75, brightness:1.0, alpha:1)),
+        buttonBackGroundColor: .red
     )
 
     static let dark: ColorPalette = .init(
-        foreground:.white,
-        background: .black, //UIColor(white: 0.1, alpha: 1.0),
-        secondaryBackground: UIColor(white: 0.15, alpha: 1.0),
-        primary: UIColor(hue:0.121, saturation:0.144, brightness:0.793, alpha:1),
-        secondary: UIColor(white: 0.6, alpha: 1.0),
-        complementary: UIColor(white: 0.81, alpha: 1.0),
-        tint: UIColor(hue:0.129, saturation:0.702, brightness:0.992, alpha:1),
-        buttonBackGroundColor: .red, myColor: .init(light: .black, dark: .black) //UIColor(red: 255, green: 50, blue: 40, alpha: 1)
+        foreground: .white,
+        background: .black,
+        secondaryBackground: .init(light: UIColor(white: 0.15, alpha: 1.0), dark: UIColor(white: 0.15, alpha: 1.0)),
+        primary: .init(light: UIColor(hue:0.121, saturation:0.144, brightness:0.793, alpha:1), dark: UIColor(hue:0.121, saturation:0.144, brightness:0.793, alpha:1)),
+        secondary: .init(light: UIColor(white: 0.6, alpha: 1.0), dark: UIColor(white: 0.6, alpha: 1.0)),
+        complementary: .init(light: UIColor(white: 0.81, alpha: 1.0), dark: UIColor(white: 0.81, alpha: 1.0)),
+        tint: .init(light: UIColor(hue:0.129, saturation:0.702, brightness:0.992, alpha:1), dark: UIColor(hue:0.129, saturation:0.702, brightness:0.992, alpha:1)),
+        buttonBackGroundColor: .red
     )
 
     @available(iOS 13.0, *)
     static let adaptive: ColorPalette = .init(
-        foreground: UIColor.label,
+        foreground: .label,
         background: .systemBackground,
-        secondaryBackground: UIColor(dynamicProvider: { traitCollection in
-            return traitCollection.userInterfaceStyle == .light ? .groupTableViewBackground : UIColor(white: 0.15, alpha: 1.0)
-        }),
-        primary: UIColor(dynamicProvider: { traitCollection in
-            return traitCollection.userInterfaceStyle == .light ? UIColor(hue: 0.635, saturation: 0.101, brightness: 0.2, alpha: 1) : UIColor(hue:0.121, saturation:0.144, brightness:0.793, alpha:1)
-        }),
-        secondary: UIColor(dynamicProvider: { traitCollection in
-            return traitCollection.userInterfaceStyle == .light ? UIColor(white: 0.4, alpha: 1.0) : UIColor(white: 0.6, alpha: 1.0)
-        }),
-        complementary: UIColor(dynamicProvider: { traitCollection in
-            return traitCollection.userInterfaceStyle == .light ? UIColor(white: 0.35, alpha: 1.0) : UIColor(white: 0.81, alpha: 1.0)
-        }),
-        tint: UIColor(dynamicProvider: { traitCollection in
-            return traitCollection.userInterfaceStyle == .light ? UIColor(hue:0.620, saturation:0.75, brightness:1.0, alpha:1) : UIColor(hue:0.129, saturation:0.702, brightness:0.992, alpha:1)
-        }),
-        buttonBackGroundColor: .systemRed,
-        myColor: .init(light: .black, dark: .white)
+        secondaryBackground: .init(light: .groupTableViewBackground, dark: UIColor(white: 0.15, alpha: 1.0)),
+        primary: .init(light: UIColor(hue: 0.635, saturation: 0.101, brightness: 0.2, alpha: 1), dark: UIColor(white: 0.6, alpha: 1.0)),
+        secondary: .init(light: UIColor(white: 0.4, alpha: 1.0), dark: UIColor(white: 0.35, alpha: 1.0)),
+        complementary: .init(light: UIColor(hue:0.620, saturation:0.75, brightness:1.0, alpha:1), dark: UIColor(hue:0.129, saturation:0.702, brightness:0.992, alpha:1)),
+        tint: .init(light: UIColor(hue:0.620, saturation:0.75, brightness:1.0, alpha:1), dark: UIColor(hue:0.129, saturation:0.702, brightness:0.992, alpha:1)),
+        buttonBackGroundColor: .systemRed
     )
 }
 
@@ -83,9 +70,11 @@ struct ColorPalette {
                 return dark
             case .light,.unspecified:
                 return light
+            @unknown default:
+                fatalError()
             }
         } else {
-            return UIColor.clear
+            return light
         }
     }
 }
