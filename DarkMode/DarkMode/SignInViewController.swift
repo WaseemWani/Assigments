@@ -15,6 +15,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
+    @PasswordValidator var pswd: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
@@ -39,9 +41,23 @@ class SignInViewController: UIViewController {
             }
         }
     
-    @IBAction func signUpButtonTapped(_ sender: Any) {
-        if let vc =  self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") {
-            self.navigationController?.pushViewController(vc, animated: true)
+    @IBAction func signInButtonTapped(_ sender: Any) {
+        pswd = passwordTextField.text!
+        if !pswd.isEmpty {
+            if let vc =  self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            showToast(withMsg: "Invalid password. paswword should contain atleast 7 alphanumeric characters and one special character")
+        }
+    }
+    
+    func showToast(withMsg alertMsg: String) {
+        let alert = UIAlertController(title: nil , message: alertMsg, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        alert.view.layer.cornerRadius = 8
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            alert.dismiss(animated: true)
         }
     }
 }
@@ -66,3 +82,25 @@ extension UIButton {
     }
 }
  
+@propertyWrapper struct PasswordValidator {
+    private var value: String = ""
+    
+    var wrappedValue: String {
+        get {
+            return value
+        }
+        set {
+            value = isValidPassword(pswd: newValue) ? newValue : ""
+        }
+    }
+    
+    init(wrappedValue: String) {
+        self.wrappedValue = wrappedValue
+    }
+    private func isValidPassword(pswd: String) -> Bool {
+        let passwordRegex = "[0-9a-zA-Z]{6,}[@#$%&*]{1,}$"
+//        let passwordRegex = "[0-9a-zA-Z@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
+//        let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-!zA-Z@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: pswd)
+    }
+}
