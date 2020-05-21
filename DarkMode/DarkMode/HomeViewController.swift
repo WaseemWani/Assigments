@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
         }
     }
     
+    /// This function configures the label with attributed text
     func configureAttributedLabel() {
         let attributedString = NSMutableAttributedString(string: "Attributed Text")
 //        if #available(iOS 13.0, *) {

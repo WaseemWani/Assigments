@@ -23,7 +23,10 @@ class SwiftTutorialsTableCell: UITableViewCell {
         apply(theme: themeProvider.theme)
     }
     
-    func configureCell(with content: TableDataSource) {
+    
+    /// This function configures table cell
+    /// - Parameter content: the content to be displayed in cell. It is of TableDataSource struct
+    func configureCell(with content: TableDatasource) {
         titleLabel.text = content.title
         descriptionLabel.text = content.description
     }

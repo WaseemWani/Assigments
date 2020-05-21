@@ -55,6 +55,8 @@ class SignInViewController: UIViewController {
         }
     }
     
+    /// this function is used to show an error toast on screen
+    /// - Parameter alertMsg: String. The message to be displayed on screen.
     func showToast(withMsg alertMsg: String) {
         let alert = UIAlertController(title: nil , message: alertMsg, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
@@ -79,12 +81,16 @@ extension SignInViewController: Themeable {
 }
 
 extension UIButton {
+    
+    /// this function roundes corners of a button by 15 units of radius.
     func roundCorners() {
         self.layer.cornerRadius = 15
         self.layer.borderColor = UIColor.systemBlue.cgColor
     }
 }
  
+
+/// this property wrapper is used to validate password
 @propertyWrapper struct PasswordValidator {
     private var value: String = ""
     

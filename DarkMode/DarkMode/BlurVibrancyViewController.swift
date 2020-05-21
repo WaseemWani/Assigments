@@ -17,6 +17,7 @@ class BlurVibrancyViewController: UIViewController {
         createBlurAndVibrancy()
     }
     
+    /// This function created a blur effect view with vibrancy over it and addes a label in vibrancy view to display vibrant text over blur view
     func createBlurAndVibrancy() {
         if #available(iOS 13.0, *) {
             let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
@@ -36,13 +37,16 @@ class BlurVibrancyViewController: UIViewController {
         }
         
     }
-
+    
+    /// This function creates blurview
         let blurView = UIVisualEffectView()
         func configureBlurView(_ blurEffect: UIBlurEffect) -> UIVisualEffectView {
             blurView.effect = blurEffect
             return blurView
         }
-
+        
+    
+    /// This funciton creates a vibrant view
         let vibrancyView = UIVisualEffectView()
         func configureVibrancyView(_ blurEffect: UIBlurEffect) -> UIVisualEffectView {
             if #available(iOS 13.0, *) {
@@ -53,7 +57,9 @@ class BlurVibrancyViewController: UIViewController {
             }
             return vibrancyView
         }
-        
+       
+    
+    /// This function creates label to display vibrant text on blur view
         let vibrantLabel = UILabel()
         func configureVibrantLabel() -> UILabel {
             vibrantLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle, compatibleWith: self.traitCollection)
