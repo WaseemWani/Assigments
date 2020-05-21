@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     
     func configureAttributedLabel() {
         let attributedString = NSMutableAttributedString(string: "Attributed Text")
-        if #available(iOS 13.0, *) {
+//        if #available(iOS 13.0, *) {
             let firstAttributes: [NSAttributedString.Key: Any] = [
                 NSAttributedString.Key.underlineStyle: 2.0,
                 NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15)
@@ -39,9 +39,9 @@ class HomeViewController: UIViewController {
             ]
             attributedString.addAttributes(firstAttributes, range: NSRange(location: 0, length: "Attributed Text".count))
             attributedLabel.attributedText = attributedString
-        } else {
-            // Fallback on earlier versions
-        }
+//        } else {
+//            // Fallback on earlier versions
+//        }
     }
 }
 

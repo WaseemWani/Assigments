@@ -38,14 +38,12 @@ class BlurVibrancyViewController: UIViewController {
     }
 
         let blurView = UIVisualEffectView()
-
         func configureBlurView(_ blurEffect: UIBlurEffect) -> UIVisualEffectView {
             blurView.effect = blurEffect
             return blurView
         }
 
         let vibrancyView = UIVisualEffectView()
-
         func configureVibrancyView(_ blurEffect: UIBlurEffect) -> UIVisualEffectView {
             if #available(iOS 13.0, *) {
                 let vibrancyEffect = UIVibrancyEffect(blurEffect: blurEffect, style: .secondaryLabel)
@@ -57,7 +55,6 @@ class BlurVibrancyViewController: UIViewController {
         }
         
         let vibrantLabel = UILabel()
-
         func configureVibrantLabel() -> UILabel {
             vibrantLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle, compatibleWith: self.traitCollection)
             vibrantLabel.text = "Vibrant Label"

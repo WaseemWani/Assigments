@@ -27,12 +27,6 @@ class SwiftTutorialsViewController: UIViewController {
         themeProvider.register(observer: self)
     }
     
-    @objc func settingsTapped() {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-    
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self

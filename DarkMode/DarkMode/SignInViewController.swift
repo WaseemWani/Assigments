@@ -31,7 +31,6 @@ class SignInViewController: UIViewController {
             self.navigationItem.leftBarButtonItem = nil
         } else {
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsTapped))
-           // navigationItem.leftBarButtonItem = settings
         }
     }
     
@@ -42,13 +41,17 @@ class SignInViewController: UIViewController {
         }
     
     @IBAction func signInButtonTapped(_ sender: Any) {
-        pswd = passwordTextField.text!
-        if !pswd.isEmpty {
-            if let vc =  self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") {
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+        if userNameTextField.text!.isEmpty {
+            showToast(withMsg: "Please enter username")
         } else {
-            showToast(withMsg: "Invalid password. paswword should contain atleast 7 alphanumeric characters and one special character")
+            pswd = passwordTextField.text!
+            if !pswd.isEmpty {
+                if let vc =  self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") {
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            } else {
+                showToast(withMsg: "Invalid password. Paswword should contain atleast 7 alphanumeric characters and one special character")
+            }
         }
     }
     
@@ -98,9 +101,7 @@ extension UIButton {
         self.wrappedValue = wrappedValue
     }
     private func isValidPassword(pswd: String) -> Bool {
-        let passwordRegex = "[0-9a-zA-Z]{6,}[@#$%&*]{1,}$"
-//        let passwordRegex = "[0-9a-zA-Z@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
-//        let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-!zA-Z@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
+        let passwordRegex = "[0-9a-zA-Z]{7,}[@#$%&*]{1,}$"
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: pswd)
     }
 }
