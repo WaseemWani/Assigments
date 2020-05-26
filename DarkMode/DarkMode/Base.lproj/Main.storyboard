@@ -4,26 +4,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1426" y="-608"/>
-        </scene>
         <!--Settings-->
         <scene sceneID="EzE-sG-AIT">
             <objects>
@@ -38,10 +22,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="j4d-WP-viq">
-                                <rect key="frame" x="175" y="363" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rPb-ns-aeE">
                                 <rect key="frame" x="335" y="85" width="51" height="31"/>
                                 <color key="onTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ch-LH-UQs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1426" y="161"/>
+            <point key="canvasLocation" x="4919" y="2067"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="PSM-8h-yMn">
@@ -105,13 +85,6 @@
                                     <action selector="signInButtonTapped:" destination="Qis-XV-n9Y" eventType="touchUpInside" id="Avr-nB-VQ9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zD9-5x-AYz">
-                                <rect key="frame" x="72" y="583" width="270" height="30"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fsC-FW-UsN">
                                 <rect key="frame" x="157" y="288" width="100" height="100"/>
                                 <constraints>
@@ -131,19 +104,16 @@
                         <constraints>
                             <constraint firstItem="mQN-Gp-dU5" firstAttribute="top" secondItem="fsC-FW-UsN" secondAttribute="bottom" constant="50" id="5O8-yR-Cjz"/>
                             <constraint firstItem="LzS-gq-qQZ" firstAttribute="top" secondItem="cGj-hi-DGy" secondAttribute="bottom" constant="20" id="9ci-U3-lxb"/>
-                            <constraint firstItem="zD9-5x-AYz" firstAttribute="top" secondItem="kWf-yf-JdB" secondAttribute="bottom" constant="20" id="AJF-FY-pg6"/>
                             <constraint firstItem="fsC-FW-UsN" firstAttribute="centerX" secondItem="mTh-ar-5Nz" secondAttribute="centerX" id="FIe-I7-697"/>
                             <constraint firstItem="qJe-5m-LxJ" firstAttribute="top" secondItem="LzS-gq-qQZ" secondAttribute="bottom" constant="5" id="FlU-Ua-BRP"/>
                             <constraint firstItem="cGj-hi-DGy" firstAttribute="leading" secondItem="mQN-Gp-dU5" secondAttribute="leading" id="Gca-FU-I0r"/>
-                            <constraint firstItem="zD9-5x-AYz" firstAttribute="trailing" secondItem="kWf-yf-JdB" secondAttribute="trailing" id="Nsd-XG-pEO"/>
+                            <constraint firstItem="mTh-ar-5Nz" firstAttribute="bottom" secondItem="kWf-yf-JdB" secondAttribute="bottom" constant="250" id="OBM-wD-kcd"/>
                             <constraint firstItem="cGj-hi-DGy" firstAttribute="trailing" secondItem="mQN-Gp-dU5" secondAttribute="trailing" id="OJr-45-YMe"/>
                             <constraint firstItem="cGj-hi-DGy" firstAttribute="top" secondItem="mQN-Gp-dU5" secondAttribute="bottom" constant="5" id="Owy-9W-4PO"/>
                             <constraint firstItem="kWf-yf-JdB" firstAttribute="leading" secondItem="mTh-ar-5Nz" secondAttribute="leading" constant="72" id="PLd-4h-xiE"/>
                             <constraint firstItem="qJe-5m-LxJ" firstAttribute="trailing" secondItem="LzS-gq-qQZ" secondAttribute="trailing" id="XjZ-QR-o4l"/>
-                            <constraint firstItem="mTh-ar-5Nz" firstAttribute="bottom" secondItem="zD9-5x-AYz" secondAttribute="bottom" constant="200" id="Zy6-iP-gN8"/>
                             <constraint firstItem="LzS-gq-qQZ" firstAttribute="trailing" secondItem="mQN-Gp-dU5" secondAttribute="trailing" id="cV9-yO-Gd3"/>
                             <constraint firstItem="LzS-gq-qQZ" firstAttribute="leading" secondItem="mQN-Gp-dU5" secondAttribute="leading" id="cVJ-BK-g0z"/>
-                            <constraint firstItem="zD9-5x-AYz" firstAttribute="leading" secondItem="kWf-yf-JdB" secondAttribute="leading" id="ddV-LC-fu3"/>
                             <constraint firstItem="qJe-5m-LxJ" firstAttribute="leading" secondItem="LzS-gq-qQZ" secondAttribute="leading" id="gNR-4i-fEH"/>
                             <constraint firstItem="mTh-ar-5Nz" firstAttribute="trailing" secondItem="kWf-yf-JdB" secondAttribute="trailing" constant="72" id="gPG-LK-4Mc"/>
                             <constraint firstItem="mTh-ar-5Nz" firstAttribute="trailing" secondItem="mQN-Gp-dU5" secondAttribute="trailing" constant="20" id="mvj-lf-dfI"/>
@@ -157,29 +127,12 @@
                         <outlet property="passwordTextField" destination="LzS-gq-qQZ" id="CPP-Mi-gUZ"/>
                         <outlet property="signInButton" destination="kWf-yf-JdB" id="72k-DW-Jge"/>
                         <outlet property="signInIcon" destination="fsC-FW-UsN" id="Td0-HW-BDv"/>
-                        <outlet property="signUpButton" destination="zD9-5x-AYz" id="aba-Mc-XuK"/>
                         <outlet property="userNameTextField" destination="mQN-Gp-dU5" id="zv0-hb-Qh0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pek-Ww-Rvb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4920" y="1411"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="olu-Z7-oEB">
-            <objects>
-                <viewController id="HJN-gd-eT2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DfR-21-TWS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="cEU-FG-54w"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="RyD-pP-RGL"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fdw-Hx-vkk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5822" y="1411"/>
         </scene>
         <!--Dark Mode Tab Bar Controller-->
         <scene sceneID="h0g-Cy-6MY">
@@ -282,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFb-MH-Ou1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8620" y="1411"/>
+            <point key="canvasLocation" x="8087" y="1411"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="vdB-PA-ozB">
@@ -468,7 +421,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMy-jL-sZt">
                                 <rect key="frame" x="20" y="164" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" name="titlColor"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
@@ -476,7 +428,6 @@
                                 <rect key="frame" x="20" y="204.5" width="374" height="122"/>
                                 <string key="text">Dark Mode is an appearance preference that tells the system and participating apps to adopt darker colour palettes. Whereas an app may display dark text on a light background by default, it may instead show white text on a dark background.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="dynamicTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiK-Pb-v4T">
@@ -487,6 +438,16 @@
                                 <state key="normal" title="Learn More"/>
                                 <connections>
                                     <action selector="learnMoreButtonTapped:" destination="93j-62-rLG" eventType="touchUpInside" id="cow-ej-WUM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB8-mc-v40">
+                                <rect key="frame" x="72" y="479" width="270" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bnw-cI-VAq"/>
+                                </constraints>
+                                <state key="normal" title="Go to Image VC"/>
+                                <connections>
+                                    <action selector="goToImageVC:" destination="93j-62-rLG" eventType="touchUpInside" id="rVY-XK-aPV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLF-fg-iDP">
@@ -509,19 +470,22 @@
                             <constraint firstItem="WiK-Pb-v4T" firstAttribute="top" secondItem="rLF-fg-iDP" secondAttribute="bottom" constant="30" id="aah-Vh-j3k"/>
                             <constraint firstItem="rLF-fg-iDP" firstAttribute="leading" secondItem="yQm-zl-fAe" secondAttribute="leading" id="f4T-o2-2nd"/>
                             <constraint firstItem="S0H-0n-8aZ" firstAttribute="trailing" secondItem="WiK-Pb-v4T" secondAttribute="trailing" constant="72" id="m7H-f9-0cl"/>
+                            <constraint firstItem="NB8-mc-v40" firstAttribute="leading" secondItem="WiK-Pb-v4T" secondAttribute="leading" id="mYy-I1-q4s"/>
+                            <constraint firstItem="NB8-mc-v40" firstAttribute="trailing" secondItem="WiK-Pb-v4T" secondAttribute="trailing" id="pC5-uN-rlL"/>
                             <constraint firstItem="S0H-0n-8aZ" firstAttribute="trailing" secondItem="fMy-jL-sZt" secondAttribute="trailing" constant="20" id="rJ0-gi-LRY"/>
+                            <constraint firstItem="NB8-mc-v40" firstAttribute="top" secondItem="WiK-Pb-v4T" secondAttribute="bottom" constant="11" id="wl6-Ad-F2a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S0H-0n-8aZ"/>
                     </view>
                     <connections>
                         <outlet property="attributedLabel" destination="rLF-fg-iDP" id="Olg-9Q-t1V"/>
-                        <outlet property="descriptionLabel" destination="yQm-zl-fAe" id="QEf-Jg-QOC"/>
-                        <outlet property="titleLabel" destination="fMy-jL-sZt" id="TKa-jd-ZZb"/>
+                        <outlet property="descriptionLabel" destination="yQm-zl-fAe" id="OlY-4p-Jj1"/>
+                        <outlet property="titleLabel" destination="fMy-jL-sZt" id="eeP-Yy-tnW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhI-Rf-BeC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6811.594202898551" y="1410.9375"/>
+            <point key="canvasLocation" x="6082.608695652174" y="1410.9375"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="jfZ-nM-FKu">
@@ -562,7 +526,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzh-B3-Zzj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7650.7246376811599" y="1410.9375"/>
+            <point key="canvasLocation" x="7052" y="1411"/>
         </scene>
     </scenes>
     <resources>
@@ -573,11 +537,5 @@
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="signupIcon" width="16" height="16"/>
         <image name="sky" width="541" height="567"/>
-        <namedColor name="dynamicTextColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="titlColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

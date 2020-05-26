@@ -13,7 +13,6 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var signUpButton: UIButton!
     
     @PasswordValidator var pswd: String = ""
     
@@ -21,7 +20,6 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         setupNavBar()
         signInButton.roundCorners()
-        signUpButton.roundCorners()
         themeProvider.register(observer: self)
     }
     
@@ -34,11 +32,11 @@ class SignInViewController: UIViewController {
         }
     }
     
-        @objc func settingsTapped() {
-            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") {
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+    @objc func settingsTapped() {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") {
+            self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
     
     @IBAction func signInButtonTapped(_ sender: Any) {
         if userNameTextField.text!.isEmpty {
@@ -72,7 +70,6 @@ extension SignInViewController: Themeable {
         self.navigationController?.navigationBar.barTintColor = theme.backgroundColor
         self.view.backgroundColor = theme.backgroundColor
         signInButton.backgroundColor = theme.buttonBackGroundColor
-        signUpButton.backgroundColor = theme.buttonBackGroundColor
         userNameTextField.textColor = theme.textColor
         userNameTextField.attributedPlaceholder = NSAttributedString(string: "User Name", attributes: [NSAttributedString.Key.foregroundColor: theme.separatorColor])
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: theme.separatorColor])
@@ -88,7 +85,6 @@ extension UIButton {
         self.layer.borderColor = UIColor.systemBlue.cgColor
     }
 }
- 
 
 /// this property wrapper is used to validate password
 @propertyWrapper struct PasswordValidator {

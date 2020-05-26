@@ -15,10 +15,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if #available(iOS 13.0, *) {
-//            overrideUserInterfaceStyle = .light
-//        }
-        
+        //        if #available(iOS 13.0, *) {
+        //            overrideUserInterfaceStyle = .light
+        //        }
         themeProvider.register(observer: self)
         configureAttributedLabel()
     }
@@ -29,28 +28,35 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBAction func goToImageVC(_ sender: Any) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ImageViewController") {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     /// This function configures the label with attributed text
     func configureAttributedLabel() {
         let attributedString = NSMutableAttributedString(string: "Attributed Text")
-//        if #available(iOS 13.0, *) {
-            let firstAttributes: [NSAttributedString.Key: Any] = [
-                NSAttributedString.Key.underlineStyle: 2.0,
-                NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15)
-                //NSAttributedString.Key.underlineColor: UIColor.black,
-            ]
-            attributedString.addAttributes(firstAttributes, range: NSRange(location: 0, length: "Attributed Text".count))
-            attributedLabel.attributedText = attributedString
-//        } else {
-//            // Fallback on earlier versions
-//        }
+        let firstAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.underlineStyle: 2.0,
+            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15)
+            //NSAttributedString.Key.underlineColor: UIColor.black,
+        ]
+        attributedString.addAttributes(firstAttributes, range: NSRange(location: 0, length: "Attributed Text".count))
+        attributedLabel.attributedText = attributedString
     }
 }
 
 extension HomeViewController: Themeable {
     func apply(theme: Theme) {
-//        self.descriptionLabel.textColor = UIColor(named: "dynamicTextColor")
-//        self.titleLabel.textColor = UIColor()
         self.navigationController?.navigationBar.barTintColor = theme.backgroundColor
         self.view.backgroundColor = theme.backgroundColor
+        if #available(iOS 13.0, *) {
+            self.titleLabel.textColor = UIColor(named: "titlColor")
+            self.descriptionLabel.textColor = UIColor(named: "dynamicTextColor")
+        } else {
+            self.titleLabel.textColor = theme.textColor
+            descriptionLabel.textColor = theme.descriptionTextColor
+        }
     }
 }

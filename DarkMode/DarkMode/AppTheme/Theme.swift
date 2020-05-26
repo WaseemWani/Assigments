@@ -55,24 +55,3 @@ struct Theme: Equatable {
     }
     
 }
-
-//@propertyWrapper struct DColor {
-//    private var dark: UIColor
-//    private var light: UIColor
-////    var theme: Theme
-//
-//    var wrappedValue: UIColor {
-//        if #available(iOS 13, *) {
-//            switch UITraitCollection.current.userInterfaceStyle {
-//            case .dark:
-//                return dark
-//            case .light,.unspecified:
-//                return light
-//            @unknown default:
-//                fatalError()
-//            }
-//        } else {
-//            return light
-//            }
-//        }
-//    }
