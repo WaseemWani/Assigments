@@ -153,14 +153,17 @@
             </objects>
             <point key="canvasLocation" x="2871" y="607"/>
         </scene>
-        <!--Swift Tutorials View Controller-->
+        <!--Employees List View Controller-->
         <scene sceneID="dS0-Oc-OY5">
             <objects>
-                <viewController storyboardIdentifier="SwiftTutorialsViewController" id="yKm-Sg-cmM" customClass="SwiftTutorialsViewController" customModule="DarkMode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmployeesListViewController" id="yKm-Sg-cmM" customClass="EmployeesListViewController" customModule="DarkMode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Hw-Of-bbJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Cjw-3o-K2o">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ht9-b0-sfq">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -168,15 +171,18 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Cjw-3o-K2o" firstAttribute="centerY" secondItem="7Hw-Of-bbJ" secondAttribute="centerY" id="2Dg-KZ-tsU"/>
                             <constraint firstItem="ht9-b0-sfq" firstAttribute="leading" secondItem="oON-og-3Ie" secondAttribute="leading" id="H7i-1h-lPM"/>
                             <constraint firstItem="oON-og-3Ie" firstAttribute="trailing" secondItem="ht9-b0-sfq" secondAttribute="trailing" id="HbH-BD-nmR"/>
                             <constraint firstItem="ht9-b0-sfq" firstAttribute="top" secondItem="oON-og-3Ie" secondAttribute="top" id="J60-qI-Tvw"/>
                             <constraint firstItem="oON-og-3Ie" firstAttribute="bottom" secondItem="ht9-b0-sfq" secondAttribute="bottom" id="caG-8X-okM"/>
+                            <constraint firstItem="Cjw-3o-K2o" firstAttribute="centerX" secondItem="7Hw-Of-bbJ" secondAttribute="centerX" id="dP9-zS-4Gh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oON-og-3Ie"/>
                     </view>
                     <navigationItem key="navigationItem" id="Iay-5n-twg"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Cjw-3o-K2o" id="UPV-mt-wjj"/>
                         <outlet property="tableView" destination="ht9-b0-sfq" id="TfV-HR-Jda"/>
                     </connections>
                 </viewController>
@@ -184,11 +190,11 @@
             </objects>
             <point key="canvasLocation" x="5597" y="349"/>
         </scene>
-        <!--Swift Tutorials-->
+        <!--Employees-->
         <scene sceneID="ARo-Zb-rRO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eU3-hH-psK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Swift Tutorials" image="list.dash" catalog="system" id="60Y-ya-6Ac">
+                    <tabBarItem key="tabBarItem" title="Employees" image="list.dash" catalog="system" id="60Y-ya-6Ac">
                         <color key="badgeColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -532,7 +538,7 @@
     <resources>
         <image name="LoginIcon" width="200" height="200"/>
         <image name="background" width="3304" height="4130"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="gear" catalog="system" width="32" height="32"/>
         <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="signupIcon" width="16" height="16"/>

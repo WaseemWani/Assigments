@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D182DC8249A2580000F4F7F /* DarkMode.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D182DC6249A2580000F4F7F /* DarkMode.xcdatamodeld */; };
+		8D182DF3249C8596000F4F7F /* EmployeesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D182DF2249C8596000F4F7F /* EmployeesListViewModel.swift */; };
 		8D44EF752417F4A000B869E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44EF742417F4A000B869E1 /* HomeViewController.swift */; };
 		8D44EF772417F9E700B869E1 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44EF762417F9E700B869E1 /* ImageViewController.swift */; };
 		8D44EF792417FD2800B869E1 /* BlurVibrancyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44EF782417FD2800B869E1 /* BlurVibrancyViewController.swift */; };
 		8DE7490023FA5BDA00EB5971 /* DarkModeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE748FF23FA5BDA00EB5971 /* DarkModeTabBarController.swift */; };
+		8DEE1F032483975600A62755 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE1F022483975600A62755 /* DBManager.swift */; };
+		8DEE1F052484D8A000A62755 /* EmployeeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE1F042484D8A000A62755 /* EmployeeDataModel.swift */; };
+		8DEE1F082484D98A00A62755 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE1F062484D98A00A62755 /* APIManager.swift */; };
+		8DEE1F092484D98A00A62755 /* APIconfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE1F072484D98A00A62755 /* APIconfig.swift */; };
+		8DEE1F0B2484E2C800A62755 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE1F0A2484E2C800A62755 /* UIViewControllerExtension.swift */; };
 		8DF8CFD723F94BB900669481 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8CFD623F94BB900669481 /* AppDelegate.swift */; };
 		8DF8CFDB23F94BB900669481 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8CFDA23F94BB900669481 /* SignInViewController.swift */; };
 		8DF8CFDE23F94BB900669481 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF8CFDC23F94BB900669481 /* Main.storyboard */; };
@@ -22,16 +29,23 @@
 		8DF8CFF223F94D1800669481 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8CFEE23F94D1800669481 /* ColorPalette.swift */; };
 		8DF8CFF423F952AA00669481 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8CFF323F952AA00669481 /* SignUpViewController.swift */; };
 		8DF8CFF623F9532600669481 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8CFF523F9532600669481 /* SettingsViewController.swift */; };
-		8DF8CFFA23F9546F00669481 /* SwiftTutorialsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8CFF723F9546F00669481 /* SwiftTutorialsTableCell.swift */; };
-		8DF8CFFB23F9546F00669481 /* SwiftTutorialsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF8CFF823F9546F00669481 /* SwiftTutorialsTableCell.xib */; };
-		8DF8CFFC23F9546F00669481 /* SwiftTutorialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8CFF923F9546F00669481 /* SwiftTutorialsViewController.swift */; };
+		8DF8CFFA23F9546F00669481 /* EmployeeDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8CFF723F9546F00669481 /* EmployeeDetailsTableCell.swift */; };
+		8DF8CFFB23F9546F00669481 /* EmployeeDetailsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF8CFF823F9546F00669481 /* EmployeeDetailsTableCell.xib */; };
+		8DF8CFFC23F9546F00669481 /* EmployeesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8CFF923F9546F00669481 /* EmployeesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D182DC7249A2580000F4F7F /* DarkMode.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DarkMode.xcdatamodel; sourceTree = "<group>"; };
+		8D182DF2249C8596000F4F7F /* EmployeesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListViewModel.swift; sourceTree = "<group>"; };
 		8D44EF742417F4A000B869E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8D44EF762417F9E700B869E1 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		8D44EF782417FD2800B869E1 /* BlurVibrancyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurVibrancyViewController.swift; sourceTree = "<group>"; };
 		8DE748FF23FA5BDA00EB5971 /* DarkModeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeTabBarController.swift; sourceTree = "<group>"; };
+		8DEE1F022483975600A62755 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		8DEE1F042484D8A000A62755 /* EmployeeDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeDataModel.swift; sourceTree = "<group>"; };
+		8DEE1F062484D98A00A62755 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		8DEE1F072484D98A00A62755 /* APIconfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIconfig.swift; sourceTree = "<group>"; };
+		8DEE1F0A2484E2C800A62755 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		8DF8CFD323F94BB900669481 /* DarkMode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkMode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF8CFD623F94BB900669481 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DF8CFD823F94BB900669481 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,9 +60,9 @@
 		8DF8CFEE23F94D1800669481 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		8DF8CFF323F952AA00669481 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8DF8CFF523F9532600669481 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		8DF8CFF723F9546F00669481 /* SwiftTutorialsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTutorialsTableCell.swift; sourceTree = "<group>"; };
-		8DF8CFF823F9546F00669481 /* SwiftTutorialsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftTutorialsTableCell.xib; sourceTree = "<group>"; };
-		8DF8CFF923F9546F00669481 /* SwiftTutorialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTutorialsViewController.swift; sourceTree = "<group>"; };
+		8DF8CFF723F9546F00669481 /* EmployeeDetailsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsTableCell.swift; sourceTree = "<group>"; };
+		8DF8CFF823F9546F00669481 /* EmployeeDetailsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeDetailsTableCell.xib; sourceTree = "<group>"; };
+		8DF8CFF923F9546F00669481 /* EmployeesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D0343C9249F3C7500B101C4 /* API Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8DEE1F072484D98A00A62755 /* APIconfig.swift */,
+				8DEE1F062484D98A00A62755 /* APIManager.swift */,
+			);
+			path = "API Manager";
+			sourceTree = "<group>";
+		};
+		8D0343CA249F3C8B00B101C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8DEE1F042484D8A000A62755 /* EmployeeDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8D0343CB249F3C9A00B101C4 /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				8DEE1F022483975600A62755 /* DBManager.swift */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
+		8D0343CC249F3CAB00B101C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8DEE1F0A2484E2C800A62755 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8DF8CFCA23F94BB900669481 = {
 			isa = PBXGroup;
 			children = (
@@ -87,10 +134,16 @@
 				8D44EF742417F4A000B869E1 /* HomeViewController.swift */,
 				8D44EF782417FD2800B869E1 /* BlurVibrancyViewController.swift */,
 				8D44EF762417F9E700B869E1 /* ImageViewController.swift */,
-				8DF8CFF723F9546F00669481 /* SwiftTutorialsTableCell.swift */,
-				8DF8CFF823F9546F00669481 /* SwiftTutorialsTableCell.xib */,
-				8DF8CFF923F9546F00669481 /* SwiftTutorialsViewController.swift */,
+				8DF8CFF923F9546F00669481 /* EmployeesListViewController.swift */,
+				8D182DF2249C8596000F4F7F /* EmployeesListViewModel.swift */,
+				8DF8CFF723F9546F00669481 /* EmployeeDetailsTableCell.swift */,
+				8DF8CFF823F9546F00669481 /* EmployeeDetailsTableCell.xib */,
 				8DF8CFF323F952AA00669481 /* SignUpViewController.swift */,
+				8D0343CC249F3CAB00B101C4 /* Extensions */,
+				8D0343CB249F3C9A00B101C4 /* DBManager */,
+				8D0343CA249F3C8B00B101C4 /* Models */,
+				8D0343C9249F3C7500B101C4 /* API Manager */,
+				8D182DC6249A2580000F4F7F /* DarkMode.xcdatamodeld */,
 				8DF8CFEA23F94C4900669481 /* AppTheme */,
 				8DF8CFD623F94BB900669481 /* AppDelegate.swift */,
 				8DF8CFD823F94BB900669481 /* SceneDelegate.swift */,
@@ -171,7 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DF8CFFB23F9546F00669481 /* SwiftTutorialsTableCell.xib in Resources */,
+				8DF8CFFB23F9546F00669481 /* EmployeeDetailsTableCell.xib in Resources */,
 				8DF8CFE323F94BBA00669481 /* LaunchScreen.storyboard in Resources */,
 				8DF8CFE023F94BBA00669481 /* Assets.xcassets in Resources */,
 				8DF8CFDE23F94BB900669481 /* Main.storyboard in Resources */,
@@ -185,19 +238,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DF8CFFA23F9546F00669481 /* SwiftTutorialsTableCell.swift in Sources */,
+				8DF8CFFA23F9546F00669481 /* EmployeeDetailsTableCell.swift in Sources */,
 				8DF8CFDB23F94BB900669481 /* SignInViewController.swift in Sources */,
+				8DEE1F092484D98A00A62755 /* APIconfig.swift in Sources */,
+				8DEE1F0B2484E2C800A62755 /* UIViewControllerExtension.swift in Sources */,
 				8DF8CFF423F952AA00669481 /* SignUpViewController.swift in Sources */,
 				8DF8CFF023F94D1800669481 /* Theme.swift in Sources */,
-				8DF8CFFC23F9546F00669481 /* SwiftTutorialsViewController.swift in Sources */,
+				8DF8CFFC23F9546F00669481 /* EmployeesListViewController.swift in Sources */,
 				8DF8CFF123F94D1800669481 /* Themeable.swift in Sources */,
 				8D44EF772417F9E700B869E1 /* ImageViewController.swift in Sources */,
+				8DEE1F032483975600A62755 /* DBManager.swift in Sources */,
 				8DF8CFEF23F94D1800669481 /* ThemeProvider.swift in Sources */,
 				8DF8CFD723F94BB900669481 /* AppDelegate.swift in Sources */,
+				8D182DC8249A2580000F4F7F /* DarkMode.xcdatamodeld in Sources */,
+				8DEE1F082484D98A00A62755 /* APIManager.swift in Sources */,
 				8DF8CFF223F94D1800669481 /* ColorPalette.swift in Sources */,
+				8DEE1F052484D8A000A62755 /* EmployeeDataModel.swift in Sources */,
 				8D44EF792417FD2800B869E1 /* BlurVibrancyViewController.swift in Sources */,
 				8DF8CFF623F9532600669481 /* SettingsViewController.swift in Sources */,
 				8DE7490023FA5BDA00EB5971 /* DarkModeTabBarController.swift in Sources */,
+				8D182DF3249C8596000F4F7F /* EmployeesListViewModel.swift in Sources */,
 				8D44EF752417F4A000B869E1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +458,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8D182DC6249A2580000F4F7F /* DarkMode.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8D182DC7249A2580000F4F7F /* DarkMode.xcdatamodel */,
+			);
+			currentVersion = 8D182DC7249A2580000F4F7F /* DarkMode.xcdatamodel */;
+			path = DarkMode.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8DF8CFCB23F94BB900669481 /* Project object */;
 }
